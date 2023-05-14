@@ -1,0 +1,190 @@
+<div id="sidebar_menu">
+  <button class="btn btn-radius btn-sm btn-secondary toggle-sidebar"><i class="fas fa-angle-left mr-2"></i>Close
+    menu</button>
+  <div class="sb-setting">
+    <div class="header-setting">
+      <div class="hs-toggles">
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Select Anime List">
+          <div class="hst-icon"><i class="fas fa-list"></i></div>
+          <div class="name"><span>Anime</span></div>
+        </a>
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Popular Anime List">
+          <div class="hst-icon"><i class="fas fa-star"></i></div>
+          <div class="name"><span>Popular</span></div>
+        </a>
+        <a href="#" rel="nofollow" class="hst-item" data-toggle="tooltip"
+           data-original-title="Select Random Anime">
+          <div class="hst-icon"><i class="fas fa-random"></i></div>
+          <div class="name"><span>Random</span></div>
+        </a>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <app-header-sidenav></app-header-sidenav>
+  <div class="clearfix"></div>
+</div>
+<div id="header" class="header-home ">
+  <div class="container">
+    <div id="mobile_menu"><i class="fa fa-bars"></i></div>
+    <a href="#" id="logo" title="Anikatsu">
+      <img src="/assets/anikatsu.png" width="100%" height="auto" alt="logo">
+      <div class="clearfix"></div>
+    </a>
+    <div id="search">
+      <div class="search-content">
+        <form action="" autocomplete="off">
+          <input type="text" class="form-control search-input" name="keyword" id="searching"
+                 placeholder="Search anime..." required>
+          <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="header-group">
+      <div class="zoro-group">
+        <div class="zrg-title"><span class="top">Join now</span><span class="bottom">
+                        <?= $websiteTitle ?> Groups
+                    </span></div>
+        <div class="zrg-list">
+          <div class="item"><a target="_blank" href="<?= $websiteUrl ?>/donate"
+                               class="zr-social-button tl-btn"><i class="fas fa-donate"></i></a></div>
+          <div class="item"><a href="#" target="_blank" class="zr-social-button dc-btn"><i
+            class="fab fa-telegram"></i></a></div>
+          <div class="item"><a href="#" target="_blank" class="zr-social-button dc-btn"><i
+            class="fab fa-discord"></i></a></div>
+          <div class="item"><a href="#" target="_blank" class="zr-social-button rd-btn"><i
+            class="fab fa-reddit-alien"></i></a></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="header-setting">
+      <div class="hs-toggles">
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Select Anime List">
+          <div class="hst-icon"><i class="fas fa-list"></i></div>
+          <div class="name"><span>Anime</span></div>
+        </a>
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Popular Anime List">
+          <div class="hst-icon"><i class="fas fa-star"></i></div>
+          <div class="name"><span>Popular</span></div>
+        </a>
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Anime Movies">
+          <div class="hst-icon"><i class="fas fa-film"></i></div>
+          <div class="name"><span>Movie</span></div>
+        </a>
+        <a href="#" class="hst-item" data-toggle="tooltip"
+           data-original-title="Select Random Anime">
+          <div class="hst-icon"><i class="fas fa-random"></i></div>
+          <div class="name"><span>Random</span></div>
+        </a>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div id="pick_menu">
+      <div class="pick_menu-ul">
+        <ul class="ulclear">
+          <li class="pmu-item pmu-item-home">
+            <a class="pmu-item-icon" href="#" title="Home">
+              <img src="assets/files/images/pick-home.svg" data-toggle="tooltip" data-placement="right" title=""
+                   data-original-title="Home">
+            </a>
+          </li>
+          <li class="pmu-item pmu-item-movies">
+            <a class="pmu-item-icon" href="#" title="Movies">
+              <img src="/assets/files/images/pick-movies.svg" data-toggle="tooltip" data-placement="right"
+                   title="" data-original-title="Movies">
+            </a>
+          </li>
+          <li class="pmu-item pmu-item-show">
+            <a class="pmu-item-icon" href="#" title="TV Series">
+              <img src="assets/files/images/pick-show.svg" data-toggle="tooltip" data-placement="right" title=""
+                   data-original-title="TV Series">
+            </a>
+          </li>
+          <li class="pmu-item pmu-item-popular">
+            <a class="pmu-item-icon" href="#" title="Most Popular">
+              <img src="/files/images/pick-popular.svg" data-toggle="tooltip" data-placement="right"
+                   title="" data-original-title="Most Popular">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+ <!--   <?php
+
+
+        if (isset($_COOKIE['userID'])) {
+            $user_id = $_COOKIE['userID'] ?>
+    <?php
+            $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+            if (mysqli_num_rows($select) > 0) {
+    $fetch = mysqli_fetch_assoc($select);
+    }
+    ?>
+    <div id="header_right">
+      <div id="user-slot">
+        <div class="header_right-user logged">
+          <div class="dropdown">
+            <div class="btn-user-avatar" data-toggle="dropdown" aria-expanded="false"
+                 aria-controls="user_menu">
+              <div class="profile-avatar">
+            <?php if ($fetch['image'] == '') {
+                                        echo '<img src="' . $websiteUrl . '/files/avatar/default/default.jpeg">';
+                } else {
+                echo '<img src="' . $websiteUrl . '/files/avatar/' . $fetch['image'] . '">';
+                } ?>
+              </div>
+            </div>
+            <div id="user_menu" class="dropdown-menu dropdown-menu-right">
+              <div class="dropdown-item dropdown-item-user">
+                <div class="user-detail">
+                  <div class="name"><strong>
+                    <?php echo $fetch['name']; ?>
+                  </strong></div>
+                  <div class="mail"><a class="__cf_email__">
+                    <?php echo $fetch['email']; ?>
+                  </a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="grid-menu">
+                <a class="dropdown-item" href="#"><i
+                  class="fas fa-user mr-2"></i>Profile</a>
+                <a class="dropdown-item" href="#"><i
+                  class="fas fa-heart mr-2"></i>Watch List</a>
+                <a class="dropdown-item" href="#"><i
+                  class="fas fa-cog mr-2"></i>Change
+                  Password</a>
+                <div class="clearfix"></div>
+
+              </div>
+              <a class="dropdown-item text-right text-white" href="#">Logout<i
+                class="fas fa-arrow-right ml-2 mr-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php } ?>-->
+
+
+ <!--   <?php if (!isset($_COOKIE['userID'])) { ?>-->
+    <div id="header_right">
+      <div id="user-slot">
+        <div class="header_right-user">
+          <a href="#" class="btn-user btn btn-sm btn-primary btn-login"><i
+            class="fa-solid fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  <!--  <?php } ?>-->
+    <div id="mobile_search" class=""><i class="fa fa-search"></i></div>
+    <div class="clearfix"></div>
+  </div>
+</div>
