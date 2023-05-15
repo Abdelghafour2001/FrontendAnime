@@ -14,6 +14,7 @@ import { HsnItemsComponent } from './header/header-sidenav/hsn-items/hsn-items.c
 import { SidebarSubsTypesComponent } from './header/header-sidenav/sidebar-subs-types/sidebar-subs-types.component';
 import { SwiperSlideComponent } from './slidebar/swiper-slide/swiper-slide.component';
 import { HomeComponent } from './home/home.component';
+import { TrendingItemComponent } from './trending/trending-item/trending-item.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     SidebarSubsTypesComponent,
     SwiperSlideComponent,
     HomeComponent,
+    TrendingItemComponent,
 
   ],
   imports: [
