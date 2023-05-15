@@ -13,6 +13,7 @@ import { HeaderSidenavComponent } from './header/header-sidenav/header-sidenav.c
 import { HsnItemsComponent } from './header/header-sidenav/hsn-items/hsn-items.component';
 import { SidebarSubsTypesComponent } from './header/header-sidenav/sidebar-subs-types/sidebar-subs-types.component';
 import { SwiperSlideComponent } from './slidebar/swiper-slide/swiper-slide.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SwiperSlideComponent } from './slidebar/swiper-slide/swiper-slide.compo
     HsnItemsComponent,
     SidebarSubsTypesComponent,
     SwiperSlideComponent,
+    HomeComponent,
 
   ],
   imports: [
