@@ -10,7 +10,7 @@
       <div class="block_area-content">
         <div class="trending-list" id="trending-home">
           <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" *ngFor="let ani from animes; let i = index;">
 
            <!--   <?php
                                 $d=  date("d");
@@ -21,16 +21,16 @@
               <div class="swiper-slide">
                 <div class="item">
                   <div class="number">
-                    <span>1</span>
-                    <div class="film-title dynamic-name" data-jname="<?=$popular['animeTitle']?>">
-                      animeTitle
+                    <span>i</span>
+                    <div class="film-title dynamic-name" data-jname="{{ani.animeTitle}}}">
+                      {{ani.animeTitle}}
                     </div>
                   </div>
-                  <a href="/anime/<?=$popular['animeId']?>" class="film-poster"
-                     title="<?=$popular['animeTitle']?>">
-                    <img data-src="<?=$popular['imgUrl']?>"
+                  <a href="/anime/{{ani.animeId}}" class="film-poster"
+                     title="ani.animeTitle">
+                    <img data-src="{{ani.imgUrl}}"
                          src="https://anikatsu.me/files/images/no_poster.jpg"
-                         class="film-poster-img lazyload" alt="<?=$popular['animeTitle']?>">
+                         class="film-poster-img lazyload" alt="{{ani.animeTitle}}">
                   </a>
                   <div class="clearfix"></div>
                 </div>
