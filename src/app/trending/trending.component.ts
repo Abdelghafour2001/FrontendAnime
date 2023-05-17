@@ -12,9 +12,9 @@ export class TrendingComponent implements  OnInit{
   constructor(private service:AnimeServiceService,private http:HttpClient) {
   }
 ngOnInit(): void {
-    this.service.getAnime().subscribe(data=>{
+    this.service.getPopular().subscribe(data=>{
       this.animes=data;
-    });;
+    });
 }
 
 }

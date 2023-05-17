@@ -10,10 +10,10 @@ import { SidebarComponent } from './slidebar/sidebar.component';
 import { TrendingComponent } from './trending/trending.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderSidenavComponent } from './header/header-sidenav/header-sidenav.component';
-import { SwiperSlideComponent } from './slidebar/swiper-slide/swiper-slide.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
 import {AnimeServiceService} from "./services/anime-service.service";
+import { AnimeFeaturedComponent } from './anime-featured/anime-featured.component';
 
 
 @NgModule({
@@ -25,9 +25,8 @@ import {AnimeServiceService} from "./services/anime-service.service";
     TrendingComponent,
     SidenavComponent,
     HeaderSidenavComponent,
-
-    SwiperSlideComponent,
     HomeComponent,
+    AnimeFeaturedComponent,
 
   ],
   imports: [

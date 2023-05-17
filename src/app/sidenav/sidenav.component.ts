@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Anime} from "../model/Anime";
+import {AnimeServiceService} from "../services/anime-service.service";
+import {HttpClient} from "@angular/common/http";
+import {Gogoanime} from "../model/Gogoanime";
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css','/../../assets/files/css/bootstrap.min.css','../../assets/files/css/min.css',
-    '../../assets/files/css/style.css','../../assets/files/css/jquery-ui.css']
+  styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent {
+export class SidenavComponent implements  OnInit{
+  animes:Anime[] | undefined;
+  constructor(private service:AnimeServiceService,private http:HttpClient) {
+  }
+  ngOnInit(): void {
+    this.service.getPopular().subscribe(data=>{
+      this.animes=data;
+    });
+  }
 
 }

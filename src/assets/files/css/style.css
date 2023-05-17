@@ -6665,7 +6665,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 
 .dub-icon,
 .share-icon {
-    background-image: url(../images/share-icon.gif);
+    background-image: url("/assets/files/images/share-icon.gif");
     background-size: cover;
     background-position: center center;
     width: 80px;
@@ -6676,7 +6676,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .share-icon {
-    background-image: url(../images/share-icon.gif);
+    background-image: url('/assets/files/images/share-icon.gif');
     left: -10px;
     width: 80px;
     height: 80px
@@ -13888,7 +13888,7 @@ button.toast-close-button {
 }
 
 #sixanime {
-    background: #121315 url(/theme/6anime/assets/images/Anikatsu.gif) no-repeat center;
+    background: #121315 url(/theme/6anime/assets/images/<?=$websiteTitle?>.gif) no-repeat center;
     height: 100%;
     width: 100%;
     position: fixed;
