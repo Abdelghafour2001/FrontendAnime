@@ -12,6 +12,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderSidenavComponent } from './header/header-sidenav/header-sidenav.component';
 import { SwiperSlideComponent } from './slidebar/swiper-slide/swiper-slide.component';
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AnimeServiceService} from "./services/anime-service.service";
 
 
 @NgModule({
@@ -32,9 +34,11 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
     //AppRoutingModule
   ],
-  providers: [],
+  providers: [AnimeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
