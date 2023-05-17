@@ -6,6 +6,7 @@ export class Gogoanime {
  animeTitle?: string;
  animeImg?: string;
  status?: string;
+ subOrDub?: string;
  genres?: string[];
  otherNames?: string[] | string;
  synopsis?: string;

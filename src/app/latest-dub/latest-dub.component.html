@@ -12,48 +12,39 @@
   <div class="tab-content">
     <div class="block_area-content block_area-list film_list film_list-grid">
       <div class="film_list-wrap">
-        <!--   <?php
-                           $json = file_get_contents("$api/recent-release?type=2&page=1");
-                           $json = json_decode($json, true);
-                           foreach($json as $recentReleaseDub) { ?>-->
-
-        <div class="flw-item">
+        <div class="flw-item" *ngFor="let ani of animes | slice:0:20; let i = index;">
           <div class="film-poster">
             <div class="tick ltr">
-              <div class="tick-item-dub  tick-eps amp-algn">
-                <?=$recentReleaseDub['subOrDub']?></div>
+              <div class="tick-item-dub tick-eps amp-algn">
+                {{ani.subOrDub}} </div>
             </div>
             <div class="tick rtl">
               <div class="tick-item tick-eps amp-algn">Episode
-                <?=$recentReleaseDub['episodeNum']?></div>
+                {{ani.episodeNum}}</div>
             </div>
             <img class="film-poster-img lazyload"
-                 data-src="<?=$recentReleaseDub['imgUrl']?>"
-                 src="/assets/files/images/no_poster.jpg"
-                 alt="<?=$recentReleaseDub['imgUrl']?>">
-            <a class="film-poster-ahref"
-               href="/watch/<?=$recentReleaseDub['episodeId']?>"
-               title="<?=$recentReleaseDub['name']?>"
-               data-jname="<?=$recentReleaseDub['name']?>"><i
-              class="fas fa-play"></i></a>
+                 src="{{ani.imgUrl}}" alt="{{ani.name}}">
+            <a class="film-poster-ahref" href="/watch/{{ani.episodeId}}"
+               title="{{ani.name}}"
+            ><i class="fas fa-play"></i></a>
           </div>
           <div class="film-detail">
             <h3 class="film-name">
-              <a href="/watch/<?=$recentReleaseDub['episodeId']?>"
-                 title="<?=$recentReleaseDub['name']?>"
-                 data-jname="<?=$recentReleaseDub['name']?>"><?=$recentReleaseDub['name']?></a>
+              <a href="/watch/{{ani.episodeId}}"
+                 title="{{ani.name}}"
+              >{{ani.name}}</a>
             </h3>
             <div class="fd-infor">
               <span class="fdi-item">Latest</span>
               <span class="dot"></span>
-              <span class="fdi-item">Dub</span>
+              <span class="fdi-item">{{ani.subOrDub}}</span>
             </div>
           </div>
           <div class="clearfix"></div>
         </div>
 
-        <!--   <?php } ?>-->
       </div>
+      <div class="clearfix"></div>
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 @Component({
   selector: 'app-trending',
   templateUrl: './trending.component.html',
-  styleUrls: ['./trending.component.css','../../assets/files/css/bootstrap.min.css','../../assets/files/css/min.css','../../assets/files/css/style.css']})
+  styleUrls: ['./trending.component.css','../../assets/files/css/style.css']})
 export class TrendingComponent implements  OnInit{
   animes:Anime[] | undefined;
   constructor(private service:AnimeServiceService,private http:HttpClient) {

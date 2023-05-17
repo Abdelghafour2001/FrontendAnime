@@ -1344,11 +1344,11 @@ h6 {
 }
 
 .tick.rtl .tick-item {
-  margin-left: 2px;
+  margin-left: 2px
 }
 
 .tick-item.tick-quality {
-  background: #ffdd95; color:#111;
+  background: #ffdd95; color:#111
 }
 
 .tac {
@@ -1356,7 +1356,7 @@ h6 {
   float: unset !important;
   background: #ffffff00 !important;
   color: #dfdfdf !important;
-  border: 1px #6d6d6d solid;
+  border: 1px #6d6d6d solid
 }
 
 .tick-item.tick-eps {
@@ -1832,7 +1832,7 @@ h6 {
 #footer {
   padding: 0 0 0;
   position: relative;
-  background: #2a2c31 url("/assets/files/images/footer.jpg") top center no-repeat
+  background: #2a2c31 url(/files/images/footer.jpg) top center no-repeat
 }
 
 #footer .container {
@@ -13888,7 +13888,7 @@ button.toast-close-button {
 }
 
 #sixanime {
-  background: #121315 url(/theme/6anime/assets/images/Anikatsu.gif) no-repeat center;
+  background: #121315 url(/theme/6anime/assets/images/<?=$websiteTitle?>.gif) no-repeat center;
   height: 100%;
   width: 100%;
   position: fixed;

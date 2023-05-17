@@ -14,14 +14,14 @@ export class AnimeFeaturedComponent implements OnInit{
   summeranimes:Anime[] | undefined;
  springanimes:Anime[] | undefined;
  year?:string;
-  constructor(private service:AnimeServiceService,private http:HttpClient) {
+  constructor(private service:AnimeServiceService) {
   }
     ngOnInit(): void {
-    let year = "2022";
+    let year = "2021";
 this.getSummer(year);this.getWinter(year);this.getFall(year);this.getSpring(year);
   }
   getSummer(year:string){
-      this.service.getFallAnime(year).subscribe(data=>{
+      this.service.getSummerAnime(year).subscribe(data=>{
     this.summeranimes=data;
   });}
   getFall(year:string){
