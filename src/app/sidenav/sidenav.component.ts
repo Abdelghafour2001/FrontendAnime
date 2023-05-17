@@ -7,16 +7,8 @@ import {Gogoanime} from "../model/Gogoanime";
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css','../../assets/files/css/style.css']
 })
-export class SidenavComponent implements  OnInit{
-  animes:Anime[] | undefined;
-  constructor(private service:AnimeServiceService,private http:HttpClient) {
-  }
-  ngOnInit(): void {
-    this.service.getPopular().subscribe(data=>{
-      this.animes=data;
-    });
-  }
+export class SidenavComponent {
 
 }

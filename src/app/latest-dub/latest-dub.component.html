@@ -1,0 +1,59 @@
+<section class="block_area block_area_home">
+  <div class="block_area-header">
+    <div class="float-left bah-heading mr-4">
+      <h2 class="cat-heading">Latest Dubbed</h2>
+    </div>
+    <div class="float-right viewmore">
+      <a class="btn" href="/latest/dubbed">View more<i
+        class="fas fa-angle-right ml-2"></i></a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="tab-content">
+    <div class="block_area-content block_area-list film_list film_list-grid">
+      <div class="film_list-wrap">
+        <!--   <?php
+                           $json = file_get_contents("$api/recent-release?type=2&page=1");
+                           $json = json_decode($json, true);
+                           foreach($json as $recentReleaseDub) { ?>-->
+
+        <div class="flw-item">
+          <div class="film-poster">
+            <div class="tick ltr">
+              <div class="tick-item-dub  tick-eps amp-algn">
+                <?=$recentReleaseDub['subOrDub']?></div>
+            </div>
+            <div class="tick rtl">
+              <div class="tick-item tick-eps amp-algn">Episode
+                <?=$recentReleaseDub['episodeNum']?></div>
+            </div>
+            <img class="film-poster-img lazyload"
+                 data-src="<?=$recentReleaseDub['imgUrl']?>"
+                 src="/assets/files/images/no_poster.jpg"
+                 alt="<?=$recentReleaseDub['imgUrl']?>">
+            <a class="film-poster-ahref"
+               href="/watch/<?=$recentReleaseDub['episodeId']?>"
+               title="<?=$recentReleaseDub['name']?>"
+               data-jname="<?=$recentReleaseDub['name']?>"><i
+              class="fas fa-play"></i></a>
+          </div>
+          <div class="film-detail">
+            <h3 class="film-name">
+              <a href="/watch/<?=$recentReleaseDub['episodeId']?>"
+                 title="<?=$recentReleaseDub['name']?>"
+                 data-jname="<?=$recentReleaseDub['name']?>"><?=$recentReleaseDub['name']?></a>
+            </h3>
+            <div class="fd-infor">
+              <span class="fdi-item">Latest</span>
+              <span class="dot"></span>
+              <span class="fdi-item">Dub</span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <!--   <?php } ?>-->
+      </div>
+    </div>
+  </div>
+</section>

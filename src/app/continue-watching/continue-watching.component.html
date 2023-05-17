@@ -1,0 +1,64 @@
+<h1>It works</h1>
+<!-- <?php if(isset($_COOKIE['userID'])){
+                    $user_id = $_COOKIE['userID'];
+                    $select = mysqli_query($conn, "SELECT * FROM `user_history` WHERE user_id = $user_id");
+                    $rows = mysqli_fetch_all($select, MYSQLI_ASSOC);
+                    $rows = array_reverse($rows);
+                    if(count($rows) != 0){ ?>-->
+
+<!--   <section class="block_area block_area_home">
+     <div class="block_area-header">
+       <div class="float-left bah-heading mr-4">
+         <h2 class="cat-heading"><i class="fas fa-history mr-2"></i>Continue Watching</h2>
+       </div>
+       <div class="clearfix"></div>
+     </div>
+     <div class="tab-content">
+       <div class="block_area-content block_area-list film_list film_list-grid">
+         <div class="film_list-wrap">
+
+           <?php
+
+
+                   foreach (array_slice($rows,0,4) as $rows)
+                 { ?>
+           <div class="flw-item">
+             <div class="film-poster">
+               <div class="tick ltr">
+                 <div class="tick-item-dub tick-eps amp-algn">
+                   DUB</div>
+               </div>
+               <div class="tick rtl">
+                 <div class="tick-item tick-eps amp-algn">Episode xxx
+                 </div>
+               </div>
+               <img class="film-poster-img lazyload" data-src="<?=$rows['anime_image']?>"
+                    src="https://anikatsu.me/files/images/no_poster.jpg"
+                    alt="<?=$rows['anime_title']?>">
+               <a class="film-poster-ahref" href="/watch/<?=$rows['anime_id']?>"
+                  title="<?=$rows['anime_title']?>" data-jname="<?=$rows['anime_title']?>"><i
+                 class="fas fa-play"></i></a>
+             </div>
+             <div class="film-detail">
+               <h3 class="film-name">
+                 <a href="/watch/<?=$rows['anime_id']?>" title="<?=$rows['anime_title']?>"
+                    data-jname="<?=$rows['anime_title']?>"><?=$rows['anime_title']?></a>
+               </h3>
+               <div class="fd-infor">
+                 <span class="fdi-item"><?=$rows['anime_release']?></span>
+                 <span class="dot"></span>
+                 <span class="fdi-item"><?=$rows['anime_type']?></span>
+               </div>
+             </div>
+             <div class="clearfix"></div>
+           </div>
+          <?php } ?>
+
+         </div>
+         <div class="clearfix"></div>
+       </div>
+     </div>
+   </section>-->
+<!--    <?php } ?>
+
+    <?php } ?>-->

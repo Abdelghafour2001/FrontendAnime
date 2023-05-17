@@ -1,0 +1,46 @@
+<section class="block_area block_area_sidebar block_area-realtime">
+  <div class="block_area-header">
+    <div class="float-left bah-heading mr-2">
+      <h2 class="cat-heading">Trending Anime</h2>
+    </div>
+    <div class="float-right bah-tab-min">
+      <ul class="nav nav-pills nav-fill nav-tabs anw-tabs">
+        <li class="nav-item"><a data-toggle="tab" class="nav-link active">Today</a></li>
+
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="block_area-content">
+    <div class="cbox cbox-list cbox-realtime">
+      <div class="cbox-content">
+        <div class="tab-content">
+          <div id="today" class="anif-block-ul anif-block-chart tab-pane active">
+            <ul class="ulclear">
+              <li class="item-top" *ngFor="let ani of animes | slice:0:5; let i = index;">
+                <div class="film-number"><span>{{i+1}}</span></div>
+                <div class="film-poster">
+                  <img src="{{ani.imgUrl}}"
+                       class="film-poster-img lazyload tooltipEl" alt="{{ani.animeTitle}}"
+                       title="{{ani.animeTitle}}">
+                </div>
+                <div class="film-detail">
+                  <h3 class="film-name">
+                    <a href="/anime/{{ani.animeId}}"
+                       title="{{ani.animeTitle}}">{{ani.animeTitle}}</a>
+                  </h3>
+                  <div class="fd-infor">
+                    <span class="fdi-item">{{ani.status}}</span>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</section>

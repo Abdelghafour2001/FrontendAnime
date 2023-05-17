@@ -14,6 +14,11 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
 import {AnimeServiceService} from "./services/anime-service.service";
 import { AnimeFeaturedComponent } from './anime-featured/anime-featured.component';
+import { LatestDubComponent } from './latest-dub/latest-dub.component';
+import { LatestSubComponent } from './latest-sub/latest-sub.component';
+import { ContinueWatchingComponent } from './continue-watching/continue-watching.component';
+import { GenresComponent } from './sidenav/genres/genres.component';
+import { TrendingsidenavComponent } from './sidenav/trendingsidenav/trendingsidenav.component';
 
 
 @NgModule({
@@ -27,6 +32,11 @@ import { AnimeFeaturedComponent } from './anime-featured/anime-featured.componen
     HeaderSidenavComponent,
     HomeComponent,
     AnimeFeaturedComponent,
+    LatestDubComponent,
+    LatestSubComponent,
+    ContinueWatchingComponent,
+    GenresComponent,
+    TrendingsidenavComponent,
 
   ],
   imports: [

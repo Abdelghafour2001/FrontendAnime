@@ -6,36 +6,32 @@
           <div class="anif-block-header">Fall</div>
           <div class="anif-block-ul">
             <ul class="ulclear">
-            <!--  <?php
-                                $json = file_get_contents("$api/season/fall-2021-anime");
-                                $json = json_decode($json, true);
-                                foreach(array_slice($json, 0, 5) as $fallAnime) { ?>-->
-              <li>
-                <div class="film-poster">
-                  <img class="film-poster-img ls-is-cached lazyloaded"
-                       data-src="<?=$fallAnime['imgUrl']?>"
-                       alt="<?=$fallAnime['animeTitle']?>"
-                       src="<?=$fallAnime['imgUrl']?>"
-                       title="<?=$fallAnime['animeTitle']?>">
-                </div>
-                <div class="film-detail">
-                  <h3 class="film-name">
-                    <a class="dynamic-name"
-                       href="/anime/<?=$fallAnime['animeId']?>"
-                       title="<?=$fallAnime['animeTitle']?>"
-                       data-jname="<?=$fallAnime['animeTitle']?>"><?=$fallAnime['animeTitle']?></a>
-                  </h3>
-                  <div class="fd-infor">
-                    <span class="fdi-item">Fall 2021 </span>
+              <li *ngFor="let ani of fallanimes | slice:0:5; let i = index;">
+                <div *ngIf="i<6">
+                  <div class="film-poster" >
+                    <img class="film-poster-img ls-is-cached lazyloaded"
+                         alt="{{ani.animeTitle}}"
+                         src="{{ani.imgUrl}}"
+                         title="{{ani.animeTitle}}">
                   </div>
+                  <div class="film-detail">
+                    <h3 class="film-name">
+                      <a class="dynamic-name"
+                         href="/anime/{{ani.animeId}}"
+                         title="{{ani.animeTitle}}"
+                      >{{ani.animeTitle}}</a>
+                    </h3>
+                    <div class="fd-infor">
+                      <span class="fdi-item">Fall {{year}} </span>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
               </li>
-            <!--  <?php } ?>-->
             </ul>
             <div class="clearfix"></div>
           </div>
-          <div class="more"><a href="/sub-category/fall-2021-anime">View more <i
+          <div class="more"><a href="/sub-category/fall-{{year}}-anime">View more <i
             class="fas fa-angle-right ml-2"></i></a></div>
         </div>
       </div>
@@ -44,32 +40,26 @@
           <div class="anif-block-header">Summer</div>
           <div class="anif-block-ul">
             <ul class="ulclear">
-              <!--<?php
-                                $json = file_get_contents("$api/season/summer-2021-anime");
-                                $json = json_decode($json, true);
-                                foreach(array_slice($json, 0, 5) as $fallAnime) { ?>-->
-              <li>
-                <div class="film-poster">
-                  <img class="film-poster-img ls-is-cached lazyloaded"
-                       data-src="<?=$fallAnime['imgUrl']?>"
-                       alt="<?=$fallAnime['animeTitle']?>"
-                       src="<?=$fallAnime['imgUrl']?>"
-                       title="<?=$fallAnime['animeTitle']?>">
-                </div>
-                <div class="film-detail">
-                  <h3 class="film-name">
-                    <a class="dynamic-name"
-                       href="/anime/<?=$fallAnime['animeId']?>"
-                       title="<?=$fallAnime['animeTitle']?>"
-                       data-jname="<?=$fallAnime['animeTitle']?>"><?=$fallAnime['animeTitle']?></a>
-                  </h3>
-                  <div class="fd-infor">
-                    <span class="fdi-item">Summer 2021 </span>
+              <li *ngFor="let ani of summeranimes | slice:0:5; let i = index;">
+                  <div class="film-poster" >
+                    <img class="film-poster-img ls-is-cached lazyloaded"
+                         alt="{{ani.animeTitle}}"
+                         src="{{ani.imgUrl}}"
+                         title="{{ani.animeTitle}}">
                   </div>
-                </div>
-                <div class="clearfix"></div>
+                  <div class="film-detail">
+                    <h3 class="film-name">
+                      <a class="dynamic-name"
+                         href="/anime/{{ani.animeId}}"
+                         title="{{ani.animeTitle}}"
+                      >{{ani.animeTitle}}</a>
+                    </h3>
+                    <div class="fd-infor">
+                      <span class="fdi-item">Summer {{year}} </span>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
               </li>
-              <?php } ?>
             </ul>
             <div class="clearfix"></div>
           </div>
@@ -82,7 +72,7 @@
           <div class="anif-block-header">Spring</div>
           <div class="anif-block-ul">
             <ul class="ulclear">
-              <li *ngFor="let ani of springanimes | slice:0:6; let i = index;">
+              <li *ngFor="let ani of springanimes | slice:0:5; let i = index;">
                 <div *ngIf="i<6">
                 <div class="film-poster" >
                   <img class="film-poster-img ls-is-cached lazyloaded"
@@ -98,7 +88,7 @@
                       >{{ani.animeTitle}}</a>
                   </h3>
                   <div class="fd-infor">
-                    <span class="fdi-item">Spring 2021 </span>
+                    <span class="fdi-item">Spring {{year}} </span>
                   </div>
                 </div>
                 <div class="clearfix"></div>
@@ -118,36 +108,32 @@
           <div class="anif-block-header">Winter</div>
           <div class="anif-block-ul">
             <ul class="ulclear">
-           <!--   <?php
-                                $json = file_get_contents("$api/season/winter-2022-anime");
-                                $json = json_decode($json, true);
-                                foreach(array_slice($json, 0, 5) as $fallAnime) { ?>-->
-              <li>
-                <div class="film-poster">
-                  <img class="film-poster-img ls-is-cached lazyloaded"
-                       data-src="<?=$fallAnime['imgUrl']?>"
-                       alt="<?=$fallAnime['animeTitle']?>"
-                       src="<?=$fallAnime['imgUrl']?>"
-                       title="<?=$fallAnime['animeTitle']?>">
-                </div>
-                <div class="film-detail">
-                  <h3 class="film-name">
-                    <a class="dynamic-name"
-                       href="/anime/<?=$fallAnime['animeId']?>"
-                       title="<?=$fallAnime['animeTitle']?>"
-                       data-jname="<?=$fallAnime['animeTitle']?>"><?=$fallAnime['animeTitle']?></a>
-                  </h3>
-                  <div class="fd-infor">
-                    <span class="fdi-item">Winter 2022</span>
+              <li *ngFor="let ani of winteranimes | slice:0:5; let i = index;">
+                <div *ngIf="i<6">
+                  <div class="film-poster" >
+                    <img class="film-poster-img ls-is-cached lazyloaded"
+                         alt="{{ani.animeTitle}}"
+                         src="{{ani.imgUrl}}"
+                         title="{{ani.animeTitle}}">
                   </div>
+                  <div class="film-detail">
+                    <h3 class="film-name">
+                      <a class="dynamic-name"
+                         href="/anime/{{ani.animeId}}"
+                         title="{{ani.animeTitle}}"
+                      >{{ani.animeTitle}}</a>
+                    </h3>
+                    <div class="fd-infor">
+                      <span class="fdi-item">Winter {{year}} </span>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
               </li>
-             <!-- <?php } ?>-->
             </ul>
             <div class="clearfix"></div>
           </div>
-          <div class="more"><a href="/sub-category/winter-2022-anime">View more <i
+          <div class="more"><a href="/sub-category/winter-{{year}}-anime">View more <i
             class="fas fa-angle-right ml-2"></i></a></div>
         </div>
       </div>

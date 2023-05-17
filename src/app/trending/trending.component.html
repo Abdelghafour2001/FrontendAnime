@@ -11,7 +11,7 @@
         <div class="trending-list" id="trending-home">
           <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
             <div class="swiper-wrapper" >
-              <div class="swiper-slide" *ngFor="let ani of animes; let i = index;">
+              <div class="swiper-slide" style="width: 250px; margin-right: 15px;" *ngFor="let ani of animes; let i = index;">
                 <div class="item">
                   <div class="number">
                     <span>{{i+1}}</span>
@@ -21,8 +21,8 @@
                   </div>
                   <a href="/anime/{{ani.animeId}}" class="film-poster"
                      title="{{ani.animeTitle}}">
-                    <img data-src="{{ani.imgUrl}}"
-                         src="https://anikatsu.me/files/images/no_poster.jpg"
+                    <img src="{{ani.imgUrl}}"
+
                          class="film-poster-img lazyload" alt="{{ani.animeTitle}}">
                   </a>
                   <div class="clearfix"></div>
