@@ -10,15 +10,8 @@
       <div class="block_area-content">
         <div class="trending-list" id="trending-home">
           <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-            <div class="swiper-wrapper" *ngFor="let ani from animes; let i = index;">
-
-           <!--   <?php
-                                $d=  date("d");
-                                $json = file_get_contents("$api/popular?page=1");
-                                $json = json_decode($json, true);
-                                foreach($json as $key => $popular) { ?>-->
-
-              <div class="swiper-slide">
+            <div class="swiper-wrapper" >
+              <div class="swiper-slide" *ngFor="let ani from animes; let i = index;">
                 <div class="item">
                   <div class="number">
                     <span>i</span>
@@ -35,11 +28,6 @@
                   <div class="clearfix"></div>
                 </div>
               </div>
-
-              <!--<?php } ?>-->
-
-
-
             </div>
             <div class="clearfix"></div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
