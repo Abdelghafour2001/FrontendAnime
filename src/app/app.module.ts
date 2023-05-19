@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { AppComponent } from './app.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HeaderComponent} from "./header/header.component";
 import { FooterComponent } from './footer/footer.component';
@@ -11,7 +11,8 @@ import { TrendingComponent } from './trending/trending.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderSidenavComponent } from './header/header-sidenav/header-sidenav.component';
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from "@angular/common/http";
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AnimeServiceService} from "./services/anime-service.service";
 import { AnimeFeaturedComponent } from './anime-featured/anime-featured.component';
 import { LatestDubComponent } from './latest-dub/latest-dub.component';
@@ -19,11 +20,16 @@ import { LatestSubComponent } from './latest-sub/latest-sub.component';
 import { ContinueWatchingComponent } from './continue-watching/continue-watching.component';
 import { GenresComponent } from './sidenav/genres/genres.component';
 import { TrendingsidenavComponent } from './sidenav/trendingsidenav/trendingsidenav.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ToastrModule } from 'ngx-toastr';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { MeComponent } from './me/me.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {TokenInterceptor} from "./token-interceptor";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgxWebstorageModule} from "ngx-webstorage";
+import {AuthService} from "./services/auth.service";
 
 
 @NgModule({
@@ -42,11 +48,11 @@ import { MeComponent } from './me/me.component';
     ContinueWatchingComponent,
     GenresComponent,
     TrendingsidenavComponent,
-    LoginComponent,
-    SignupComponent,
-    ForgotpasswordComponent,
+
     NotfoundComponent,
     MeComponent,
+    LoginComponent,
+    SignupComponent,
 
   ],
   imports: [
@@ -55,9 +61,18 @@ import { MeComponent } from './me/me.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    //AppRoutingModule
+    AppRoutingModule,
+    NgxWebstorageModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+   // FontAwesomeModule,
+    NgbModule,EditorModule,
   ],
-  providers: [AnimeServiceService],
+  providers: [AnimeServiceService,AuthService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

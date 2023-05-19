@@ -10,11 +10,12 @@ import {NotfoundComponent} from "./notfound/notfound.component";
 import {MeComponent} from "./me/me.component";
 
 const routes: Routes = [
-  { path:"", component:HomeComponent, canActivate: [AuthGuard]},
-  { path:"home", component:HomeComponent, canActivate: [AuthGuard]},
-  { path:"register", component:SignupComponent, canActivate: [AfterAuthGuard]},
-  { path:"login", component:LoginComponent, canActivate: [AfterAuthGuard]},
-  { path:"me", component:MeComponent, canActivate: [AuthGuard]},
+  { path:"", component:HomeComponent},
+  { path:"home", component:HomeComponent},
+  { path:"register", component:SignupComponent},
+  { path:"login", component:LoginComponent},
+  { path:"me", component:MeComponent},
+  { path: 'me/:name', component: MeComponent },
 //  { path:"emailconfirmation", component:UserConfirmationComponent},
   { path:"forgotpassword", component:ForgotpasswordComponent},
 //  { path:"resetpassword", component:ResetpasswordComponent},

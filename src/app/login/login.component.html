@@ -1,62 +1,53 @@
-<div id="sidebar_menu_bg"></div>
-<div id="wrapper" data-page="page_home">
-  <app-header></app-header>
-  <div class="clearfix"></div>
-  <div id="main-wrapper" class="layout-page layout-page-404">
-    <div class="container">
-      <div class="container-404 text-center">
-        <div class="c4-medium">Login Your Account</div>
-        <div class="c4-big-img">
-          <form class="preform" method="post" action="">
-            <div class="form-group">
-              <label class="prelabel" for="email">Username Or Email address</label>
-              <div class="col-sm-6" style="float:none;margin:auto;">
-                <input type="text" class="form-control" name="login"
-                       placeholder="user69 or name@email.com" required="">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="prelabel" for="password">Password</label>
-              <div class="col-sm-6" style="float:none;margin:auto;">
-                <input type="password" class="form-control" name="password" placeholder="Password"
-                       required="">
-              </div>
-            </div>
-            <div class="mt-4">&nbsp;</div>
-            <div class="form-group login-btn mb-0">
-              <div class="col-sm-6" style="float:none;margin:auto;">
-                <button id="btn-login" name="submit" class="btn btn-primary btn-block">Login</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="c4-small">Don't have an account? <a href="<?=$websiteUrl?>/user/register" class="link-highlight register-tab-link"
-                                                        title="Register">Register</a></div>
-        <div class="c4-button">
-          <a href="/" class="btn btn-radius btn-focus"><i class="fa fa-chevron-circle-left mr-2"></i>Back to
-            <?=$websiteTitle?></a>
-        </div>
+<div class="clearfix"></div>
+<div id="main-wrapper" class="layout-page layout-page-404">
+  <div class="container">
+    <div class="container-404 text-center">
+      <div class="c4-medium">Login Your Account</div>
+      <div class="c4-big-img">
+                    <form class="preform" [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="user_name" class="prelabel">Username</label>
+                            <div class="col-sm-6" style="float:none;margin:auto;" >
+                                <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required
+                                    autofocus>
+                                <span *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">
+                                   Please provide a valid username
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="prelabel">Password</label>
+                            <div class="col-sm-6" style="float:none;margin:auto;">
+                                <input type="password" id="password" class="form-control" [formControlName]="'password'" name="password" required>
+                                <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+                                  Password cannot be empty
+                                </span>
+                            </div>
+                        </div>
+                      <div class="mt-4">&nbsp;</div>
+                        <div class="form-group login-btn mb-0">
+                          <div class="col-sm-6" style="float:none;margin:auto;">
+                        <button type="submit" id="btn-login" name="submit" class="btn btn-primary btn-block">
+                                Login
+                            </button>
+                          </div>
+                        </div>
+                        <div class="login-failed" *ngIf='this.isError'>
+                             <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>
+                        </div>
+                        <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="this.registerSuccessMessage != null">
+                            <p class="register-success-text">{{registerSuccessMessage}}</p>
+                       </div>
+                    </form>
       </div>
-      <div class="clearfix"></div>
+      <div class="c4-small">Don't have an account? <a href="/register" class="link-highlight register-tab-link"
+                                                      title="Register">Register</a></div>
+      <div class="c4-button">
+        <a href="/" class="btn btn-radius btn-focus"><i class="fa fa-chevron-circle-left mr-2"></i>Back to
+          Anikatsu</a>
+      </div>
     </div>
-  </div>
-  <app-footer></app-footer>
-  <div id="mask-overlay"></div>
-  <!---  <?php
-      if(isset($message)){
-         foreach($message as $message){
-            echo '<script type="text/javascript">swal({title: "Error!",text: "Incorrect Email or Password!",icon: "warning",button: "Close",})</script>;';
-  }
-  }
-  ?>
- <script type="text/javascript">
-           swal({
-               title: "Error!",
-               text: "Username must be atleast 6 characters",
-               icon: "warning",
-               button: "Close",
-           });
-   </script>-->
-  <div style="display:none;">
+    <div class="clearfix"></div>
   </div>
 </div>

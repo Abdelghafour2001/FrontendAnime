@@ -1,1 +1,67 @@
-<p>signup works!</p>
+<div id="main-wrapper" class="layout-page layout-page-404">
+  <div class="container">
+    <div class="container-404 text-center">
+      <div class="c4-medium">Register Your Account</div>
+      <div class="c4-big-img">
+                    <form class="preform" [formGroup]="signupForm" (ngSubmit)="signup()">
+                        <div class="form-group">
+                            <label for="email_address" class="prelabel">E-Mail
+                                Address</label>
+                            <div class="col-sm-6" style="float:none;margin:auto;">
+                                <input type="text" formControlName="email" id="email_address" placeholder="E-mail" class="form-control"
+                                       name="email-address" required
+                                    autofocus>
+                                <span *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">
+                                    Please provide a valid email
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="prelabel" for="username">User Name</label>
+                            <div class="col-sm-6" style="float:none;margin:auto;">
+                                <input type="text" name="username" id="username"  placeholder="Username" formControlName="username" class="form-control" required autofocus>
+                                <span *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched">
+                                    Please provide a valid username
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="prelabel">Password</label>
+                            <div class="col-sm-6" style="float:none;margin:auto;">
+                                <input type="password" [formControlName]="'password'" placeholder="Password" id="password" class="form-control" name="password" required>
+                                <span *ngIf="!signupForm.get('password')?.valid && signupForm.get('password')?.touched">
+                                    Please provide a valid Password
+                                </span>
+                            </div>
+                        </div>
+                      <div class="form-group">
+                        <label class="prelabel" for="password">Confirm Password</label>
+                        <div class="col-sm-6" style="float:none;margin:auto;">
+                          <input type="password" class="form-control" name="cpassword" [formControlName]="'cpassword'"
+                                 placeholder="Confirm Password" required="">
+                          <span *ngIf="!signupForm.get('password')?.value != signupForm.get('cpassword')?.value">
+                                    Please write the same a Password
+                                </span>
+                        </div>
+                      </div>
+                      <div class="mt-4">&nbsp;</div>
+                      <div class="form-group login-btn mb-0">
+                        <div class="col-sm-6" style="float:none;margin:auto;">
+                          <button id="btn-login" name="submit" type="submit"
+                                  class="btn btn-primary btn-block">Register</button>
+                        </div>
+                      </div>
+                    </form>
+      </div>
+      <div class="c4-small">You already have an account? <a href="/login"
+                                                            class="link-highlight register-tab-link" title="Login">Login</a></div>
+      <div class="c4-button">
+        <a href="/home" class="btn btn-radius btn-focus"><i class="fa fa-chevron-circle-left mr-2"></i>Back
+          to Anikatsu</a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
