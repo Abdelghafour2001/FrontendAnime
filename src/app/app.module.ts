@@ -19,6 +19,11 @@ import { LatestSubComponent } from './latest-sub/latest-sub.component';
 import { ContinueWatchingComponent } from './continue-watching/continue-watching.component';
 import { GenresComponent } from './sidenav/genres/genres.component';
 import { TrendingsidenavComponent } from './sidenav/trendingsidenav/trendingsidenav.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { MeComponent } from './me/me.component';
 
 
 @NgModule({
@@ -37,6 +42,11 @@ import { TrendingsidenavComponent } from './sidenav/trendingsidenav/trendingside
     ContinueWatchingComponent,
     GenresComponent,
     TrendingsidenavComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotpasswordComponent,
+    NotfoundComponent,
+    MeComponent,
 
   ],
   imports: [
