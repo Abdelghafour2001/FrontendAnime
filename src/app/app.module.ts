@@ -30,6 +30,9 @@ import {TokenInterceptor} from "./token-interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {AuthService} from "./services/auth.service";
+import { MoviesComponent } from './movies/movies.component';
+import { TvShowsComponent } from './tv-shows/tv-shows.component';
+import {MovieServiceService} from "./services/movie-service.service";
 
 
 @NgModule({
@@ -53,6 +56,8 @@ import {AuthService} from "./services/auth.service";
     MeComponent,
     LoginComponent,
     SignupComponent,
+    MoviesComponent,
+    TvShowsComponent,
 
   ],
   imports: [
@@ -68,7 +73,7 @@ import {AuthService} from "./services/auth.service";
    // FontAwesomeModule,
     NgbModule,EditorModule,
   ],
-  providers: [AnimeServiceService,AuthService,{
+  providers: [AnimeServiceService,MovieServiceService,AuthService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
