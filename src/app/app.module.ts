@@ -33,6 +33,7 @@ import {AuthService} from "./services/auth.service";
 import { MoviesComponent } from './movies/movies.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import {MovieServiceService} from "./services/movie-service.service";
+import { MoviesGenresComponent } from './movies-genres/movies-genres.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import {MovieServiceService} from "./services/movie-service.service";
     SignupComponent,
     MoviesComponent,
     TvShowsComponent,
+    MoviesGenresComponent,
 
   ],
   imports: [
