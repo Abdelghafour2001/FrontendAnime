@@ -6,8 +6,8 @@
     <div class="clearfix"></div>
   </div>
   <div class="block_area-content">
-    <div class="cbox cbox-genres">
-      <ul class="ulclear color-list sb-genre-list sb-genre-less">
+    <div [ngClass]="more?'cbox cbox-genres ':'cbox cbox-genres active'">
+      <ul class="ulclear color-list sb-genre-list" [ngClass]="more?'sb-genre-less':'sb-genre-more'">
         <li class="nav-item"> <a class="nav-link" href="/genre/action" title="Action">Action</a> </li>
         <li class="nav-item"> <a class="nav-link" href="/genre/adventure" title="Adventure">Adventure</a> </li>
         <li class="nav-item"> <a class="nav-link" href="/genre/cars" title="Cars">Cars</a></li>
@@ -52,7 +52,7 @@
         <li class="nav-item"> <a class="nav-link" href="/genre/yuri" title="Yuri">Yuri</a></li>
       </ul>
       <div class="clearfix"></div>
-      <button class="btn btn-sm btn-block btn-showmore mt-2"></button>
+      <button class="btn btn-sm btn-block btn-showmore mt-2 "  (click)="toggle()"></button>
     </div>
   </div>
 </section>

@@ -9,7 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './slidebar/sidebar.component';
 import { TrendingComponent } from './trending/trending.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderSidenavComponent } from './header/header-sidenav/header-sidenav.component';
 import { HomeComponent } from './home/home.component';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -34,6 +33,8 @@ import { MoviesComponent } from './movies/movies.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import {MovieServiceService} from "./services/movie-service.service";
 import { MoviesGenresComponent } from './movies-genres/movies-genres.component';
+import {HeaderSidenavComponent} from "./header/header-sidenav/header-sidenav.component";
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { MoviesGenresComponent } from './movies-genres/movies-genres.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxUsefulSwiperModule,
     FormsModule,
     AppRoutingModule,
     NgxWebstorageModule.forRoot(),

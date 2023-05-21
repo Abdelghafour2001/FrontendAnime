@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AnimeServiceService} from "./services/anime-service.service";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,10 @@ import {AnimeServiceService} from "./services/anime-service.service";
   providers:[AnimeServiceService]
 })
 export class AppComponent {
+  constructor(private modalService: NgbModal) {
+  }
 
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
 }

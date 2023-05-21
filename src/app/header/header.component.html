@@ -1,4 +1,4 @@
-<div id="sidebar_menu">
+<div id="sidebar_menu" (click)="toggle()" [ngClass]="activ?'mobile_menu':'mobile_menu active'" >
   <button class="btn btn-radius btn-sm btn-secondary toggle-sidebar"><i class="fas fa-angle-left mr-2"></i>Close
     menu</button>
   <div class="sb-setting">
@@ -23,12 +23,12 @@
       </div>
     </div>
   </div>
-  <app-header-sidenav></app-header-sidenav>
+<app-header-sidenav></app-header-sidenav>
   <div class="clearfix"></div>
 </div>
 <div id="header" class="header-home ">
-  <div class="container">
-    <div id="mobile_menu"><i class="fa fa-bars"></i></div>
+  <div class="container2" style="max-width:100%!important;width:100%!important;padding-top:0px!important;">
+    <div id="mobile_menu" (click)="toggle()" [ngClass]="activ?'mobile_menu':'mobile_menu active'" style="padding-left: 20px; padding-right:20px; "><i class="fa fa-bars"></i></div>
     <a href="#" id="logo" title="Anikatsu">
       <img src="/assets/files/images/logo.png" width="100%" height="auto" alt="logo">
       <div class="clearfix"></div>

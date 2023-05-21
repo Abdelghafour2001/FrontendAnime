@@ -12,7 +12,10 @@ export class MoviesGenresComponent implements OnInit{
   genres:Genre[] | undefined;
   constructor(private service:MovieServiceService) {
   }
-
+  more=true;
+  toggle(){
+    this.more= !this.more;
+  }
   ngOnInit(): void {
     this.service.getAllGenres().subscribe(data=>{
       this.genres=data;

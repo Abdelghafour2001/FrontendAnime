@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
-
 html {
   position: relative
 }
@@ -28,7 +27,7 @@ a {
 
 a:hover {
   transition: all .3s;
-  color: #DC3545
+  color: #ff5882
 }
 
 
@@ -64,7 +63,7 @@ h6 {
   padding: 1px 3px;
   font-size: 12px;
   margin: 5px 0;
-  border-bottom: 2px solid #DC3545;
+  border-bottom: 2px solid #ef547a;
   font-weight: 400
 }
 
@@ -79,9 +78,9 @@ h6 {
 .btn-focus,
 .btn-primary,
 .btn-tab.active {
-  background: #DC3545 !important;
+  background: #ef547a !important;
   color: rgb(255, 255, 255) !important;
-  border-color: #DC3545 !important;
+  border-color: #ef547a !important;
   box-shadow: none !important
 }
 
@@ -251,7 +250,7 @@ h6 {
 }
 
 .highlight-text {
-  color: #DC3545
+  color: #ef547a
 }
 
 .mat-icon {
@@ -259,8 +258,9 @@ h6 {
   vertical-align: bottom
 }
 
-.container {
-  max-width: 1800px;
+.container2 {
+  max-width: 1960px;
+  padding: 20px;
   width: 100%
 }
 
@@ -282,7 +282,7 @@ h6 {
   padding: 0
 }
 
-#header .container {
+#header .container2 {
   position: relative;
   padding-left: 15px
 }
@@ -325,7 +325,7 @@ h6 {
 
 #mobile_menu.active i,
 #mobile_search.active i {
-  color: #DC3545
+  color: #ef547a
 }
 
 #mobile_menu i {
@@ -357,7 +357,7 @@ h6 {
   float: left
 }
 
-#header_menu .container {
+#header_menu .container2 {
   position: relative
 }
 
@@ -387,14 +387,14 @@ h6 {
 }
 
 #header_menu ul.header_menu-list .nav-item:hover>a {
-  color: #DC3545
+  color: #ef547a
 }
 
 #header_menu ul.header_menu-list .nav-item.active>a:before {
   content: "";
   width: 100%;
   height: 3px;
-  background: #DC3545;
+  background: #ef547a;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -440,7 +440,7 @@ h6 {
 }
 
 #header_menu .header_menu-sub ul.sub-menu li:hover a {
-  background: #DC3545;
+  background: #ef547a;
   color: #111 !important
 }
 
@@ -538,7 +538,7 @@ h6 {
 
 #header .btn-on-header:hover {
   background: 0;
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 #header #search-toggle .btn-on-header {
@@ -546,7 +546,7 @@ h6 {
 }
 
 #header #search-toggle.active .btn-on-header {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -642,7 +642,7 @@ h6 {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #DC3545
+  color: #ef547a
 }
 
 .header_right-user.logged .dropdown-menu {
@@ -666,7 +666,7 @@ h6 {
 }
 
 .header_right-user.logged .dropdown-menu .dropdown-item:hover {
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 .header_right-user.logged .dropdown-menu .dropdown-item-user {
@@ -708,7 +708,7 @@ h6 {
 }
 
 .hr-notifications.show .hrn-icon {
-  color: #DC3545
+  color: #ef547a
 }
 
 .hr-notifications .hrn-icon .number {
@@ -907,7 +907,7 @@ h6 {
 
 .search-content .search-result-pop .nav-bottom {
   padding: 15px;
-  background: #DC3545 !important;
+  background: #ef547a !important;
   font-size: 16px;
   color: #111;
   text-align: center;
@@ -960,13 +960,13 @@ h6 {
 
 .btn-sm.btn-filter-item:hover,
 .btn-sm.nl-item-btn:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .btn-sm.btn-filter-item.active {
-  border-color: #DC3545;
+  border-color: #ef547a;
   background: #3d3e39;
-  color: #DC3545
+  color: #ef547a
 }
 
 .btn-sm.nl-item-btn {
@@ -990,7 +990,7 @@ h6 {
   font-weight: 400;
   padding: 0;
   margin: 0;
-  color: #DC3545
+  color: #ef547a
 }
 
 .block_area .block_area-header .viewmore .btn {
@@ -1069,12 +1069,12 @@ h6 {
 }
 
 .pre-tabs .nav-item .nav-link:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .pre-tabs .nav-item .nav-link.active {
-  color: #DC3545;
-  border-color: #DC3545
+  color: #ef547a;
+  border-color: #ef547a
 }
 
 .pre-tabs-min {
@@ -1097,7 +1097,7 @@ h6 {
 
 .pre-tabs-min .nav-item .nav-link.active {
   color: #000 !important;
-  background: #DC3545 !important
+  background: #ef547a !important
 }
 
 .anw-tabs {
@@ -1123,7 +1123,7 @@ h6 {
 
 .anw-tabs .nav-item .nav-link.active {
   background: #51535b;
-  color: #DC3545
+  color: #ef547a
 }
 
 .bah-tab-min .anw-tabs {
@@ -1136,7 +1136,7 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #DC3545
+  color: #ef547a
 }
 
 .film_list {
@@ -1407,11 +1407,11 @@ h6 {
 }
 
 .pre-pagination .pagination .page-item .page-link:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .pre-pagination .pagination .page-item.active .page-link {
-  background: #DC3545;
+  background: #ef547a;
   color: #111;
   cursor: default
 }
@@ -1481,7 +1481,7 @@ h6 {
 
 .premodal .modal-content .close:hover {
   opacity: 1;
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -1541,7 +1541,7 @@ h6 {
 }
 
 .link-highlight {
-  color: #DC3545 !important;
+  color: #ef547a !important;
   cursor: pointer
 }
 
@@ -1626,7 +1626,7 @@ h6 {
 }
 
 #sidebar_menu .sidebar_menu-list>.nav-item>a.nav-link:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 #sidebar_menu .sidebar_menu-list>.nav-item>.toggle-submenu {
@@ -1832,10 +1832,10 @@ h6 {
 #footer {
   padding: 0 0 0;
   position: relative;
-  background: #2a2c31 url(/files/images/footer.jpg) top center no-repeat
+  background: #2a2c31 url("/assets/files/images/footer.jpg") top center no-repeat
 }
 
-#footer .container {
+#footer .container2 {
   position: relative;
   z-index: 3
 }
@@ -1981,7 +1981,7 @@ ul.az-list li a {
 ul.az-list li a:hover,
 ul.az-list li.active a {
   color: rgb(255, 255, 255);
-  background: #DC3545
+  background: #ef547a
 }
 
 .main-az {
@@ -2004,7 +2004,7 @@ ul.az-list li.active a {
   text-align: center
 }
 
-.page-az .container {
+.page-az .container2 {
   max-width: 1260px;
   padding: 0 15px
 }
@@ -2025,7 +2025,7 @@ ul.az-list li.active a {
   line-height: 1.3em;
   margin: 0 0 15px;
   font-weight: 400;
-  color: #DC3545
+  color: #ef547a
 }
 
 .btn-xs {
@@ -2211,7 +2211,7 @@ ul.az-list li.active a {
 }
 
 .text-home a {
-  color: #DC3545
+  color: #ef547a
 }
 
 .text-home .btn-expand {
@@ -2313,7 +2313,7 @@ ul.az-list li.active a {
 
 .noti-list .noti-item.new .icon {
   opacity: 1;
-  color: #DC3545
+  color: #ef547a
 }
 
 .noti-list .noti-item.new {
@@ -2472,7 +2472,7 @@ ul.az-list li.active a {
   line-height: 1.3em;
   font-weight: 400;
   margin-bottom: 20px;
-  color: #DC3545
+  color: #ef547a
 }
 
 .deslide-item .desi-head-title {
@@ -2581,7 +2581,7 @@ ul.az-list li.active a {
 .anif-block .anif-block-header {
   font-size: 18px;
   font-weight: 500;
-  color: #DC3545;
+  color: #ef547a;
   padding: 15px 20px
 }
 
@@ -2649,7 +2649,7 @@ ul.az-list li.active a {
 
 .anif-block-ul li .film-fav.active,
 .anif-block-ul li .film-fav:hover {
-  color: #DC3545;
+  color: #ef547a;
   opacity: 1
 }
 
@@ -2660,7 +2660,7 @@ ul.az-list li.active a {
 }
 
 .anif-block-ul li .film-play:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .anif-block .more a {
@@ -2836,7 +2836,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .cbox.cbox-list .anif-block-chart li.item-top .film-number span {
-  border-bottom: 3px solid #DC3545;
+  border-bottom: 3px solid #ef547a;
   padding-bottom: 6px;
   color: #fff
 }
@@ -3008,7 +3008,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .table_schedule .table_schedule-list li:hover .film-detail .fd-play .btn-play {
-  background: #DC3545;
+  background: #ef547a;
   color: rgb(255, 255, 255)
 }
 
@@ -3021,7 +3021,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .table_schedule .table_schedule-list li:hover .time {
-  color: #DC3545
+  color: #ef547a
 }
 
 .table_schedule .table_schedule-date {
@@ -3046,7 +3046,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .table_schedule .table_schedule-date .tsd-item.active {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -3071,7 +3071,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .table_schedule .btn-showmore:hover {
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 .table_schedule-list.limit-8 li:nth-of-type(n+8) {
@@ -3082,7 +3082,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   display: block !important
 }
 
-.schedule_page .container {
+.schedule_page .container2 {
   max-width: 1260px;
   padding-left: 15px
 }
@@ -3499,12 +3499,12 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .player-controls .pc-item.pc-comment .btn i {
-  color: #DC3545
+  color: #ef547a
 }
 
 .player-controls .pc-item.pc-comment .btn span {
   font-weight: 600;
-  color: #DC3545
+  color: #ef547a
 }
 
 .dub-toggle {
@@ -3546,7 +3546,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .dub-toggle.active .dt-status {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -3782,7 +3782,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 
 .cfc-min-block .cmb-item .btn-sm {
   border: 0;
-  color: #DC3545;
+  color: #ef547a;
   font-size: 12px;
   line-height: 1.1em;
   background: 0;
@@ -3864,7 +3864,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   left: 0;
   bottom: 0;
   width: 4px;
-  background: #DC3545
+  background: #ef547a
 }
 
 .ss-list .ssl-item .ssli-order {
@@ -3957,7 +3957,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ss-list .ssl-item.active .ssli-order {
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 .ss-list .ssl-item.active .ssli-btn {
@@ -3965,7 +3965,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ss-list .ssl-item.active .ssli-btn .btn.btn-circle {
-  background: #DC3545;
+  background: #ef547a;
   color: rgb(255, 255, 255)
 }
 
@@ -4140,7 +4140,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ss-list.ss-list-min .ssl-item.active {
-  background: #DC3545 !important
+  background: #ef547a !important
 }
 
 .ss-list.ss-list-min .ssl-item.active .ssli-order {
@@ -4205,7 +4205,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   background-position: center center
 }
 
-.profile-header .container {
+.profile-header .container2 {
   z-index: 3;
   position: relative
 }
@@ -4293,7 +4293,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .inbox-item.new .highlight-text {
-  color: #DC3545
+  color: #ef547a
 }
 
 .inbox-item.with-poster {
@@ -4416,7 +4416,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .nli-select .custom-select {
   font-size: 12px;
   cursor: pointer;
-  color: #DC3545;
+  color: #ef547a;
   background: #33353c;
   border: 0;
   max-width: 140px;
@@ -4771,7 +4771,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 
 .stx-center .stx-title {
   margin: 0;
-  color: #DC3545
+  color: #ef547a
 }
 
 .stx-center .description {
@@ -4827,7 +4827,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .zr-news .item .zrn-title:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .zr-news .item .zrn-title .news-title {
@@ -4904,16 +4904,16 @@ ul.color-list li:nth-of-type(7n+6) a {
   text-transform: uppercase
 }
 
-.layout-news .container {
+.layout-news .container2 {
   max-width: 1300px;
   padding-left: 15px
 }
 
-.layout-news .container #main-sidebar {
+.layout-news .container2 #main-sidebar {
   width: 400px
 }
 
-.layout-news .container #main-content {
+.layout-news .container2 #main-content {
   width: calc(100% - 400px)
 }
 
@@ -4936,7 +4936,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   font-size: 2.5em !important;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #DC3545
+  color: #ef547a
 }
 
 .news-article .article-content h1 {
@@ -5078,7 +5078,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .block-rating .rating-result .progress .progress-bar {
-  background-color: #DC3545 !important
+  background-color: #ef547a !important
 }
 
 .block-rating .rating-result .rr-mark strong {
@@ -5176,7 +5176,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   width: 60px;
   text-align: center;
   transform: translateY(-50%);
-  color: #DC3545
+  color: #ef547a
 }
 
 .dt-comment:before {
@@ -5266,7 +5266,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .cw_l-line .ibody p a.tag-name {
-  color: #DC3545
+  color: #ef547a
 }
 
 .cw_l-line .ibody.is-spoil p {
@@ -5295,11 +5295,11 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .cw_l-line .ibottom .ib-li .btn:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .cw_l-line .ibottom .ib-li .btn.active {
-  color: #DC3545
+  color: #ef547a
 }
 
 .cw_l-line .ibottom .ib-li.ib-like .btn.active i::before {
@@ -5334,7 +5334,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .rep-more .btn {
-  color: #DC3545;
+  color: #ef547a;
   font-size: 13px;
   font-weight: 600;
   padding: 0;
@@ -5451,7 +5451,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .cb-li .btn.btn-spoil.active i {
-  background-color: #DC3545;
+  background-color: #ef547a;
   color: #111;
   font-size: 10px
 }
@@ -5472,7 +5472,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .toggle-basic .tb-result {
-  color: #DC3545;
+  color: #ef547a;
   font-weight: 500;
   margin-left: 3px;
   width: 19px
@@ -5559,7 +5559,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   width: 18px;
   height: 18px;
   left: calc(100% - 18px);
-  background: #DC3545
+  background: #ef547a
 }
 
 .hs-toggles .hst-item .hst-icon {
@@ -5573,7 +5573,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .hs-toggles .hst-item .hst-icon i {
   font-size: 20px;
   line-height: 20px;
-  color: #DC3545
+  color: #ef547a
 }
 
 .toggle-lang {
@@ -5597,7 +5597,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .toggle-lang>span.en {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -5607,7 +5607,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .toggle-lang.off>span.jp {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -5773,7 +5773,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .new-noti-list .nnl-item.new strong.manga-name {
-  color: #DC3545
+  color: #ef547a
 }
 
 .new-noti-list .nnl-item .time {
@@ -5790,7 +5790,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .new-noti-list .nnl-item.nnl-more:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .new-noti-list .nnl-mark {
@@ -5804,7 +5804,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .new-noti-list .nnl-mark .btn-xs:hover {
-  color: #DC3545
+  color: #ef547a
 }
 
 .trending-list {
@@ -5845,7 +5845,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .trending-navi>div:hover {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -5900,7 +5900,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   font-size: 24px;
   line-height: 1em;
   text-align: center;
-  color: #DC3545;
+  color: #ef547a;
   z-index: 9;
   left: 0;
   right: 0
@@ -5970,7 +5970,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   font-size: 12px;
   float: left;
   padding: 2px 0 2px 20px;
-  border-left: 2px solid #DC3545;
+  border-left: 2px solid #ef547a;
   margin-right: 20px;
   position: relative
 }
@@ -5978,7 +5978,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .share-buttons .share-buttons-block .sbb-title span {
   font-weight: 600;
   font-size: 14px;
-  color: #DC3545
+  color: #ef547a
 }
 
 .share-buttons .share-buttons-block .addthis_inline_share_toolbox {
@@ -6609,8 +6609,8 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .screen-items .item:hover .icon-play {
-  background: #DC3545;
-  border-color: #DC3545
+  background: #ef547a;
+  border-color: #ef547a
 }
 
 .screen-items .item:hover .icon-play i {
@@ -6618,7 +6618,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .screen-items .item:hover .sii-title {
-  color: #DC3545
+  color: #ef547a
 }
 
 .premodal.premodal-video .modal-content .modal-body {
@@ -6751,7 +6751,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   max-width: 600px
 }
 
-.livestream_page .container {
+.livestream_page .container2 {
   padding: 0 15px
 }
 
@@ -6834,7 +6834,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 
 .live__-wrap .item .live-info .owner .uc-info strong {
   font-weight: 600;
-  color: #DC3545;
+  color: #ef547a;
   max-width: 110px;
   display: block;
   float: left
@@ -7038,7 +7038,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .choose-type .pre-tabs-min .nav-item .nav-link.active {
-  background: #DC3545 !important
+  background: #ef547a !important
 }
 
 .choose-name .form-control {
@@ -7113,7 +7113,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .live___-detail .film-name .ep-style {
-  color: #DC3545
+  color: #ef547a
 }
 
 .live___-detail .film-stats {
@@ -7193,7 +7193,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .live_-start .ls__-tabs li a.nav-link.active {
   background: 0 0 !important;
   padding: 0;
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 .live_-start .ls__-tabs li a.nav-link.active i,
@@ -7403,7 +7403,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ls___-animeinfo .film-info .film-name .ep-style {
-  color: #DC3545
+  color: #ef547a
 }
 
 .ls___-animeinfo .film-info .film-description {
@@ -7475,7 +7475,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ls___-detail .live-stats .item.item-online {
-  color: #DC3545
+  color: #ef547a
 }
 
 .ls___-detail .live-stats .item.item-online span:after {
@@ -7598,7 +7598,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .ls___-chatbox .chatbox_wrap .chatbox_-input .form-control-textarea:focus {
   background: #252c44;
   border-color: transparent;
-  box-shadow: 0 0 0 2px #DC3545
+  box-shadow: 0 0 0 2px #ef547a
 }
 
 .ls___-chatbox .chatbox_wrap .chatbox_-input .form-control-textarea::placeholder {
@@ -7682,7 +7682,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .chatbox_-room .item.item-mine .ic_text .name {
-  color: #DC3545
+  color: #ef547a
 }
 
 .chatbox_-room .item.item-mine:before {
@@ -7690,7 +7690,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #DC3545;
+  background: #ef547a;
   position: absolute;
   top: 10px;
   left: -13px
@@ -7898,7 +7898,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .ls___-player-cd .player-countdown .countdown-style {
   font-size: 3em;
   font-weight: 700;
-  color: #DC3545
+  color: #ef547a
 }
 
 .ls___-player .pc-share {
@@ -7912,7 +7912,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ls___-player .pc-share a {
-  color: #DC3545;
+  color: #ef547a;
   font-weight: 600
 }
 
@@ -8090,7 +8090,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .choose-thumbnail .lv-list .item.active {
-  border-color: #DC3545;
+  border-color: #ef547a;
   z-index: 2;
   opacity: 1;
   box-shadow: 0 20px 20px rgba(0, 0, 0, .2)
@@ -8123,7 +8123,7 @@ ul.color-list li:nth-of-type(7n+6) a {
   right: auto;
   width: 230px;
   border-radius: 6px 0 0 6px;
-  background: #DC3545
+  background: #ef547a
 }
 
 .player-servers .ps_-status .server-notice {
@@ -8191,7 +8191,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 .player-servers .ps_-block .ps__-title i {
   width: 16px;
   text-align: left;
-  color: #DC3545
+  color: #ef547a
 }
 
 .player-servers .ps_-block .small {
@@ -8202,7 +8202,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 
 .player-servers .ps_-block .small strong {
   font-weight: 600;
-  color: #DC3545
+  color: #ef547a
 }
 
 .ps__-list .item {
@@ -8222,7 +8222,7 @@ ul.color-list li:nth-of-type(7n+6) a {
 }
 
 .ps__-list .item .btn.active {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -8334,7 +8334,7 @@ span#AddMalDiv {
 span#AddMalDiv #AddMal {
   font-size: 12px;
   font-weight: 600;
-  color: #DC3545 !important
+  color: #ef547a !important
 }
 
 .fav-tabs {
@@ -8789,7 +8789,7 @@ span#AddMalDiv #AddMal {
   line-height: 30px;
   text-align: center;
   border-radius: 50%;
-  background: #DC3545;
+  background: #ef547a;
   color: #111;
   z-index: 2;
   box-shadow: 0 0 5px rgba(0, 0, 0, .4);
@@ -8820,7 +8820,7 @@ span#AddMalDiv #AddMal {
 }
 
 .pre-tabs-hashtag .nav-item .nav-link.active {
-  color: #DC3545 !important;
+  color: #ef547a !important;
   background: 0 0 !important
 }
 
@@ -8853,7 +8853,7 @@ span#AddMalDiv #AddMal {
 }
 
 #toast-container>div.toast-success {
-  background-color: #DC3545 !important;
+  background-color: #ef547a !important;
   color: #000 !important;
   background-image: none !important
 }
@@ -9251,7 +9251,7 @@ span#AddMalDiv #AddMal {
 .pre-qtip-button .btn.btn-play {
   width: calc(100% - 48px);
   color: #111;
-  background: #DC3545
+  background: #ef547a
 }
 
 .pre-qtip-button .dr-tip-fav {
@@ -9376,7 +9376,7 @@ span#AddMalDiv #AddMal {
 #slider .sc-detail .scd-item .quality {
   display: inline-block;
   padding: 3px 4px;
-  background: #DC3545;
+  background: #ef547a;
   color: #111;
   border-radius: 3px;
   line-height: 1em;
@@ -9908,7 +9908,7 @@ span#AddMalDiv #AddMal {
 }
 
 .swiper-button:hover {
-  background: #DC3545;
+  background: #ef547a;
   color: #111
 }
 
@@ -11890,7 +11890,7 @@ span#AddMalDiv #AddMal {
   }
 
   .player-servers .ps_-status .server-notice strong b {
-    color: #DC3545;
+    color: #ef547a;
     margin-top: 5px
   }
 

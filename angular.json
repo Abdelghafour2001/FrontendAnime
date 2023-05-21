@@ -26,10 +26,12 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/swiper/swiper-bundle.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/files/js/comman.js"]
           },
           "configurations": {
             "production": {

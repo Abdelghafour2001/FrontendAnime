@@ -1,5 +1,5 @@
 <div id="anime-trending">
-  <div class="container2">
+  <div class="container2" style="max-width:100%!important;width:100%!important;">
     <section class="block_area block_area_trending">
       <div class="block_area-header">
         <div class="bah-heading">
@@ -7,12 +7,14 @@
         </div>
         <div class="clearfix"></div>
       </div>
+
       <div class="block_area-content">
         <div class="trending-list" id="trending-home">
           <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+            <swiper [config]="config">
             <div class="swiper-wrapper" >
-              <div class="swiper-slide" style="width: 250px; margin-right: 15px;" *ngFor="let ani of animes; let i = index;">
-                <div class="item">
+              <div class="swiper-slide"  style="width: 250px!important; margin-right: 15px;" *ngFor="let ani of animes; let i = index;">
+                <div class="item" >
                   <div class="number">
                     <span>{{i+1}}</span>
                     <div class="film-title dynamic-name">
@@ -29,6 +31,7 @@
                 </div>
               </div>
             </div>
+            </swiper>
             <div class="clearfix"></div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
           </div>

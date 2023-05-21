@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./genres.component.css']
 })
 export class GenresComponent {
-
+more=true;
+toggle(){
+  this.more= !this.more;
+}
 }

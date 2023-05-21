@@ -2,22 +2,28 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css',
-    '../../styles.css',
-    "../../assets/files/css/min.css",
-    "../../assets/files/css/jquery-ui.css"]
+    '../../assets/files/css/style.css'
+  ]
 })
 export class HeaderComponent  implements OnInit {
   faUser = faUser;
   isLoggedIn?: boolean;
   username?: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
-
+  constructor(private authService: AuthService, private router: Router,private modalService:NgbModal) { }
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
+activ=true;
+  toggle(){
+    this.activ= !this.activ;
+  }
   ngOnInit() {
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
     this.authService.username.subscribe((data: string) => this.username = data);

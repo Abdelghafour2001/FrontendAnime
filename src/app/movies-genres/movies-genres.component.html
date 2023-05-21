@@ -6,12 +6,12 @@
     <div class="clearfix"></div>
   </div>
   <div class="block_area-content">
-    <div class="cbox cbox-genres">
-      <ul class="ulclear color-list sb-genre-list sb-genre-less" >
+    <div [ngClass]="more?'cbox cbox-genres ':'cbox cbox-genres active'">
+      <ul class="ulclear color-list sb-genre-list" [ngClass]="more?'sb-genre-less':'sb-genre-more'">
         <li class="nav-item" *ngFor="let gen of genres; let i = index;"> <a class="nav-link" href="{{gen.url}}" title="Action">{{gen.title}}</a> </li>
       </ul>
       <div class="clearfix"></div>
-      <button class="btn btn-sm btn-block btn-showmore mt-2"></button>
+      <button class="btn btn-sm btn-block btn-showmore mt-2" (click)="toggle()"></button>
     </div>
   </div>
 </section>
