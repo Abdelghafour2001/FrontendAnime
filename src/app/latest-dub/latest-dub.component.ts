@@ -15,7 +15,7 @@ export class LatestDubComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    let type='DUB';
+    let type='2';
     this.service.getRecentReleases(type,"1").subscribe(data=>{
       this.animes=data;
     });

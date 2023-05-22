@@ -20,7 +20,7 @@
               <li class="item-top" *ngFor="let ani of animes | slice:0:5; let i = index;">
                 <div class="film-number"><span>{{i+1}}</span></div>
                 <div class="film-poster">
-                  <img src="{{ani.imgUrl}}"
+                  <img src="{{ani.animeImg}}"
                        class="film-poster-img lazyload tooltipEl" alt="{{ani.animeTitle}}"
                        title="{{ani.animeTitle}}">
                 </div>

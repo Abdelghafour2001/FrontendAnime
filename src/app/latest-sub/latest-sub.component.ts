@@ -15,7 +15,7 @@ export class LatestSubComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    let type='SUB';
+    let type='1';
     this.service.getRecentReleases(type,"1").subscribe(data=>{
       this.animes=data;
     });
