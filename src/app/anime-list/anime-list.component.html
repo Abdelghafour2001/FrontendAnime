@@ -1,0 +1,44 @@
+<div id="main-wrapper">
+  <div class="container2">
+    <div id="main-content">
+      <section class="block_area block_area_category">
+        <div class="block_area-header">
+          <div class="float-left bah-heading mr-4">
+            <h2 class="cat-heading">Anime List</h2>
+          </div>
+          <div class="float-right bah-result">
+            <div class="cmb-item">
+              <div class="nl-item">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="tab-content">
+          <div class="block_area-content block_area-list film_list film_list-grid film_list-wfeature">
+            <div class="film_list-wrap">
+                                    <div class="flw-item" *ngFor="let ani of animes | slice: 0:40; let i = index;">
+                                        <div class="film-detail">
+                                            <h3 class="film-name">
+                                                <a
+                                                    href="/anime/{{ani.animeId}}" title="{{ani.animeTitle}}"
+                                                    >{{ani.animeTitle}}</a>
+                                            </h3>
+                                            <div class="fd-infor">
+                                                <span class="fdi-item">#{{i}} </span>
+                                                <span class="dot"></span>
+                                                <span class="fdi-item">{{ani.subOrDub}}</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div> <div id="main-sidebar">
+    <app-genres></app-genres>
+  </div>
+    <div class="clearfix"></div></div></div>

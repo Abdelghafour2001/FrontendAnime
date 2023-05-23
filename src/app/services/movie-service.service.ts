@@ -16,6 +16,10 @@ export class MovieServiceService {
     let url = "/api/movies/getMovies?="+page;
     return this.http.get<Movie[]>(url);
   }
+  getTvShow(page:string){
+    let url = "/api/movies/getTvshows?="+page;
+    return this.http.get<Movie[]>(url);
+  }
   getAllGenres(){
     let url = "/api/movies/all-genres";
     return this.http.get<Genre[]>(url);

@@ -35,6 +35,9 @@ import {MovieServiceService} from "./services/movie-service.service";
 import { MoviesGenresComponent } from './movies-genres/movies-genres.component';
 import {HeaderSidenavComponent} from "./header/header-sidenav/header-sidenav.component";
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { AnimeListComponent } from './anime-list/anime-list.component';
+import { AnimeDetailsComponent } from './anime-details/anime-details.component';
+import { RecentReleasesComponent } from './recent-releases/recent-releases.component';
 
 
 @NgModule({
@@ -61,6 +64,9 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     MoviesComponent,
     TvShowsComponent,
     MoviesGenresComponent,
+    AnimeListComponent,
+    AnimeDetailsComponent,
+    RecentReleasesComponent,
 
   ],
   imports: [

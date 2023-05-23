@@ -9,12 +9,16 @@ import {AfterAuthGuard} from "./guards/after-auth.guard";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import {MeComponent} from "./me/me.component";
 import {MoviesComponent} from "./movies/movies.component";
+import {TvShowsComponent} from "./tv-shows/tv-shows.component";
+import {AnimeListComponent} from "./anime-list/anime-list.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
   { path:"home", component:HomeComponent},
   { path:"register", component:SignupComponent},
   { path:"movies", component:MoviesComponent} ,
+  {path:"tv",component:TvShowsComponent},
+  {path:"anime",component:AnimeListComponent},
   { path:"login", component:LoginComponent},
   { path:"me", component:MeComponent},
   { path: 'me/:name', component: MeComponent },

@@ -15,6 +15,10 @@ export class AnimeServiceService {
     let url = "/api/anime/popular-anime";
     return this.http.get<Anime[]>(url);
   }
+  getAnimeList(page:string){
+    let url = "/api/anime/animeList?page="+page;
+    return this.http.get<Anime[]>(url);
+  }
   getRecentReleases(type:string,page:string){
     let url = "/api/anime/recent-release?type="+type+"?page="+page;
     return this.http.get<Anime[]>(url);

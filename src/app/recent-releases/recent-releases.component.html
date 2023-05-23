@@ -1,0 +1,48 @@
+<section class="block_area block_area_category">
+  <div class="block_area-header">
+    <div class="float-left bah-heading mr-4">
+      <h2 class="cat-heading">Recent Releases</h2>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="tab-content">
+    <div class="block_area-content block_area-list film_list film_list-grid film_list-wfeature">
+      <div class="film_list-wrap" *ngFor="let ani of animes | slice: 0:40; let i = index;">
+        <div class="flw-item ">
+          <div class="film-poster">
+            <div class="tick ltr">
+              <div class="tick-item-sub  tick-eps amp-algn">{{ani.subOrDub}}</div>
+            </div>
+            <div class="tick rtl">
+              <div class="tick-item tick-eps amp-algn">Episode {{ani.episodeNum}}
+              </div>
+            </div>
+            <img class="film-poster-img lazyload"
+                 src="{{ani.animeImg}}"
+                 alt="{{ani.animeTitle}}">
+            <a class="film-poster-ahref"
+               href="/watch/{{ani.episodeId}}"
+               title="{{ani.animeTitle}}"
+               ><i class="fas fa-play"></i></a>
+          </div>
+          <div class="film-detail">
+            <h3 class="film-name">
+              <a
+                href="/watch/{{ani.episodeId}}"
+                title="{{ani.animeTitle}}"
+                >{{ani.animeTitle}}</a>
+            </h3>
+            <div class="fd-infor">
+              <span class="fdi-item">{{ani.subOrDub}}</span>
+              <span class="dot"></span>
+              <span class="fdi-item">Latest</span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
