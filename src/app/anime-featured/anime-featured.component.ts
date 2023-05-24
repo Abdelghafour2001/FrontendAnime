@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Anime} from "../model/Anime";
 import {AnimeServiceService} from "../services/anime-service.service";
 import {HttpClient} from "@angular/common/http";
@@ -36,4 +36,5 @@ this.getSummer(year);this.getWinter(year);this.getFall(year);this.getSpring(year
     this.service.getWinterAnime(year).subscribe(data=>{
       this.winteranimes=data;
     });}
+
 }
