@@ -1,16 +1,15 @@
-<div id="main-wrapper" date-page="movie_info" data-id="<?=$url?>">
+<div id="main-wrapper" >
   <div id="ani_detail">
     <div class="ani_detail-stage">
-      <div class="container">
+      <div class="container2">
         <div class="anis-cover-wrap">
-          <div class="anis-cover"
-               style="background-image: url('<?=$getAnime['imageUrl']?>')"></div>
+          <div class="anis-cover" [style.background-image]="'url(' + anime?.animeImg + ')'"></div>
         </div>
         <div class="anis-content">
           <div class="anisc-poster">
             <div class="film-poster">
-              <img src="<?=$websiteUrl?>/files/images/no_poster.jpg"
-                   data-src="<?=$getAnime['imageUrl']?>"
+              <img
+                   src="{{anime?.animeImg}}"
                    class="lazyload film-poster-img">
             </div>
           </div>
@@ -30,44 +29,31 @@
                   </li>
                   <li itemprop="itemListElement" itemscope=""
                       itemtype="http://schema.org/ListItem"
-                      class="breadcrumb-item dynamic-name" data-jname="<?=$getAnime['name']?>"
+                      class="breadcrumb-item dynamic-name"
                       aria-current="page">
-                    <a itemprop="item" href="/anime/<?=$url?>"><span itemprop="name"><?=$getAnime['name']?></span></a>
+                    <a itemprop="item" href="/anime/<?=$url?>"><span itemprop="name">{{anime?.animeTitle}}</span></a>
                     <meta itemprop="position" content="3">
                   </li>
                 </ol>
               </nav>
             </div>
-            <h2 class="film-name dynamic-name" data-jname="<?=$getAnime['name']?>"><?=$getAnime['name']?></h2>
+            <h2 class="film-name dynamic-name" >{{anime?.animeTitle}}</h2>
             <div class="film-stats">
               <div class="tac tick-item tick-quality">HD</div>
               <div class="tac tick-item tick-dub">
-                <?php $str = $getAnime['name'];
-                                          $last_word_start = strrpos ( $str , " ") + 1;
-                                          $last_word_end = strlen($str) - 1;
-                                          $last_word = substr($str, $last_word_start, $last_word_end);
-                                          if ($last_word == "(Dub)"){echo "Dubbed";} else {echo "Subbed";}
-                                    ?>
+                SUB & DUB
               </div>
               <span class="dot"></span>
-              <span class="item"><?=$getAnime['type']?></span>
+              <span class="item">{{anime?.type}}</span>
               <div class="clearfix"></div>
             </div>
-            <?php if(count($getAnime['episode_id']) == 0) {
-                                    echo "";
-                                } else { ?>
+
             <div class="film-buttons">
-              <a href="/watch/<?php foreach(array_slice($episodelist, 0, 1) as $episode1) {?><?=$episode1['episodeId']?><?php } ?>" class="btn btn-radius btn-primary btn-play"><i
+              <a *ngFor="let ani of episodesList | slice:0:1; let i = index;" href="/watch/{{ani.episodeId}}" class="btn btn-radius btn-primary btn-play"><i
                 class="fas fa-play mr-2"></i>Watch now</a>
-
-              <div class="dr-fav" id="watch-list-content">
-
-
-                <?php } ?>
-
                 <div class="dr-fav" id="watch-list-content">
 
-                  <?php if(isset($_COOKIE['userID'])){?>
+                 <!-- <?php if(isset($_COOKIE['userID'])){?>
                   <?php
                                              $watchLater = mysqli_query($conn, "SELECT * FROM `watch_later` WHERE (user_id,anime_id) = ('$user_id','$url')");
                                              $watchLater = mysqli_fetch_assoc($watchLater);
@@ -76,11 +62,11 @@
                                              }else{
                                                 $anime_id = null;
                                              }
-                                             if($anime_id == null){ ?>
+                                             if($anime_id == null){ ?>-->
                   <a id="addToList" class="btn btn-radius btn-light"
-                     animeId="<?=$url?>">&nbsp;<i class='fas fa-plus mr-2'></i> Add to
+                     href="#">&nbsp;<i class='fas fa-plus mr-2'></i> Add to
                     List&nbsp;</a>
-                  <script>
+                 <!-- <script>
                     let btn = document.querySelector('#addToList');
                     btn.addEventListener("click", () => {
                       let btnValue = btn.getAttribute('animeId');
@@ -109,21 +95,20 @@
                     });
                   </script>
                   <?php }?>
-                  <?php } ?>
+                  <?php } ?>-->
 
 
 
-                  <?php if(!isset($_COOKIE['userID'])){?>
-                  <a href="<?=$websiteUrl?>/user/login?animeId=<?=$url?>"
+                  <!--<?php if(!isset($_COOKIE['userID'])){?>-->
+                  <a href="/user/login?animeId=<?=$url?>"
                      class="btn btn-radius btn-light">&nbsp;<i
                     class='fas fa-plus mr-2'></i>&nbsp;Login to Add&nbsp;</a>
-                  <?php } ?>
+                 <!-- <?php } ?>-->
                 </div>
-              </div>
               <div class="film-description m-hide">
-                <div class="text"><?=$getAnime['synopsis']?></div>
+                <div class="text">{{anime?.synopsis}}</div>
               </div>
-              <div class="film-text m-hide"><?=$websiteTitle?> is a site to watch online anime like <strong><?=$getAnime['name']?></strong> online, or you can even watch <strong><?=$getAnime['name']?></strong> in HD quality</div>
+              <div class="film-text m-hide">Anikatsu is a site to watch online anime like <strong>{{anime?.animeTitle}}</strong> online, or you can even watch <strong>{{anime?.animeTitle}}</strong> in HD quality</div>
               <div class="share-buttons share-buttons-min mt-3">
                 <div class="share-buttons-block" style="padding-bottom: 0 !important;">
                   <div class="share-icon"></div>
@@ -140,38 +125,34 @@
               <div class="anisc-info">
                 <div class="item item-title w-hide">
                   <span class="item-head">Overview:</span>
-                  <div class="text"><?=$getAnime['synopsis']?></div>
+                  <div class="text">{{anime?.synopsis}}</div>
                 </div>
                 <div class="item item-title">
-                  <span class="item-head">Other names:</span> <span class="name"><?=$getAnime['othername']?></span>
+                  <span class="item-head">Other names:</span> <span class="name">{{anime?.otherNames}}</span>
                 </div>
                 <div class="item item-title">
                   <span class="item-head">Language:</span>
                   <span class="name">
-                                            <?php $str = $getAnime['name'];
-                                                $last_word_start = strrpos ( $str , " ") + 1;
-                                                $last_word_end = strlen($str) - 1;
-                                                $last_word = substr($str, $last_word_start, $last_word_end);
-                                                if ($last_word == "(Dub)"){echo "Dubbed";} else {echo "Subbed";}
-                                            ?>
-                                        </span>
+                    SUB & DUB</span>
                 </div>
                 <div class="item item-title">
-                  <span class="item-head">Episodes:</span> <span class="name"><?php echo count($getAnime['episode_id'])?></span>
+                  <span class="item-head">Episodes:</span> <span class="name">{{anime?.totalEpisodes}}</span>
                 </div>
                 <div class="item item-title">
-                  <span class="item-head">Release Year:</span> <span class="name"><?=$getAnime['released']?></span>
+                  <span class="item-head">Release Year:</span> <span class="name">{{anime?.releasedDate}}</span>
                 </div>
                 <div class="item item-title">
-                  <span class="item-head">Type:</span> <span class="name"><?=$getAnime['type']?></span>
+                  <span class="item-head">Type:</span> <span class="name">{{anime?.type}}</span>
                 </div>
                 <div class="item item-title">
-                  <span class="item-head">Status:</span> <a href="<?php if ($getAnime['status'] == "Completed") {echo "/status/completed";} else {echo "/status/ongoing";}?>"><?=$getAnime['status']?></a>
+                  <span class="item-head">Status:</span> <a href="/status/completed">{{anime?.status}}</a>
+                 <!-- <span class="item-head">Status:</span> <a href="<?php if ($getAnime['status'] == "Completed") {echo "/status/completed";} else {echo "/status/ongoing";}?>"><?=$getAnime['status']?></a>-->
                 </div>
                 <div class="item item-list">
-                  <span class="item-head">Genres:</span> <?php foreach($getAnime['genres'] as $genre) { ?><a href="<?=$websiteUrl?>/genre/<?php $genreUrl = strtolower($genre); echo str_replace(" ","+", $genreUrl);?>"><?=$genre?></a><?php } ?>
+                  <span class="item-head">Genres:</span>
+                  <a *ngFor="let gen of genres; let i = index;" href="/genre/{{gen}}">{{gen}}</a>
                 </div>
-                <div class="film-text w-hide"><?=$websiteTitle?> is a site to watch online anime like <strong><?=$getAnime['name']?></strong> online, or you can even watch <strong><?=$getAnime['name']?></strong> in HD quality</div>
+                <div class="film-text w-hide">Anikatsu is a site to watch online anime like <strong>{{anime?.animeTitle}}</strong> online, or you can even watch <strong>{{anime?.animeTitle}}</strong> in HD quality</div>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -179,9 +160,7 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container">
+    <div class="container2">
       <div id="main-content">
         <section class="block_area block_area-comment">
           <div class="block_area-header block_area-header-tabs">
@@ -191,15 +170,78 @@
             <div class="clearfix"></div>
           </div>
           <div class="tab-content">
-            <?php include('./_php/disqus.php'); ?>
+            <app-disqus></app-disqus>
           </div>
         </section>
 
-        <?php include('./_php/recent-releases.php'); ?>
+        <app-recent-releases></app-recent-releases>
         <div class="clearfix"></div>
       </div>
       <app-sidenav></app-sidenav>
       <div class="clearfix"></div>
     </div>
-  </div>
 </div>
+</div>
+</div>
+<script type="text/javascript">
+  $(".btn-server").click(function () {
+    $(".btn-server").removeClass("active");
+    $(this).closest(".btn-server").addClass("active");
+  });
+</script>
+<script type="text/javascript">
+  if ('<?= $likeClass ?>' === 'fas') {
+    document.getElementById('likeMsg').innerHTML = "Liked"
+  }
+  if ('<?= $dislikeClass ?>' === 'fas') {
+    document.getElementById('dislikeMsg').innerHTML = "Disliked"
+  }
+
+  function setLikeDislike(type, id) {
+    jQuery.ajax({
+      url: '<?= $websiteUrl ?>/setLikeDislike.php',
+      type: 'post',
+      data: 'type=' + type + '&id=' + id,
+      success: function (result) {
+        result = jQuery.parseJSON(result);
+        if (result.opertion == 'like') {
+          jQuery('#like').removeClass('far');
+          jQuery('#like').addClass('fas');
+          jQuery('#dislike').addClass('far');
+          jQuery('#dislike').removeClass('fas');
+          jQuery('#likeMsg').html("Liked")
+          jQuery('#dislikeMsg').html("Dislike")
+        }
+        if (result.opertion == 'unlike') {
+          jQuery('#like').addClass('far');
+          jQuery('#like').removeClass('fas');
+          jQuery('#likeMsg').html("Like")
+        }
+
+        if (result.opertion == 'dislike') {
+          jQuery('#dislike').removeClass('far');
+          jQuery('#dislike').addClass('fas');
+          jQuery('#like').addClass('far');
+          jQuery('#like').removeClass('fas');
+          jQuery('#dislikeMsg').html("Disliked")
+          jQuery('#likeMsg').html("Like")
+        }
+        if (result.opertion == 'undislike') {
+          jQuery('#dislike').addClass('far');
+          jQuery('#dislike').removeClass('fas');
+          jQuery('#dislikeMsg').html("Dislike")
+        }
+
+
+        jQuery('#votedCount').html(
+          `(${parseInt(result.like_count) + parseInt(result.dislike_count)} Voted)`
+        );
+        jQuery('#ratingAnime').html(((parseInt(result.like_count) *
+          10 + parseInt(result.dislike_count) * 5) / (
+          parseInt(result.like_count) + parseInt(
+            result.dislike_count))).toFixed(2));
+      }
+
+    });
+  }
+</script>

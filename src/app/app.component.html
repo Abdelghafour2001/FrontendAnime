@@ -29,6 +29,68 @@
 <script type="text/javascript" src="/assets/files/js/movie.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/assets/files/js/function.js"></script>
+<script type="text/javascript">
+  $(".btn-server").click(function () {
+    $(".btn-server").removeClass("active");
+    $(this).closest(".btn-server").addClass("active");
+  });
+</script>
+<script type="text/javascript">
+  if ('<?= $likeClass ?>' === 'fas') {
+    document.getElementById('likeMsg').innerHTML = "Liked"
+  }
+  if ('<?= $dislikeClass ?>' === 'fas') {
+    document.getElementById('dislikeMsg').innerHTML = "Disliked"
+  }
+
+  function setLikeDislike(type, id) {
+    jQuery.ajax({
+      url: '<?= $websiteUrl ?>/setLikeDislike.php',
+      type: 'post',
+      data: 'type=' + type + '&id=' + id,
+      success: function (result) {
+        result = jQuery.parseJSON(result);
+        if (result.opertion == 'like') {
+          jQuery('#like').removeClass('far');
+          jQuery('#like').addClass('fas');
+          jQuery('#dislike').addClass('far');
+          jQuery('#dislike').removeClass('fas');
+          jQuery('#likeMsg').html("Liked")
+          jQuery('#dislikeMsg').html("Dislike")
+        }
+        if (result.opertion == 'unlike') {
+          jQuery('#like').addClass('far');
+          jQuery('#like').removeClass('fas');
+          jQuery('#likeMsg').html("Like")
+        }
+
+        if (result.opertion == 'dislike') {
+          jQuery('#dislike').removeClass('far');
+          jQuery('#dislike').addClass('fas');
+          jQuery('#like').addClass('far');
+          jQuery('#like').removeClass('fas');
+          jQuery('#dislikeMsg').html("Disliked")
+          jQuery('#likeMsg').html("Like")
+        }
+        if (result.opertion == 'undislike') {
+          jQuery('#dislike').addClass('far');
+          jQuery('#dislike').removeClass('fas');
+          jQuery('#dislikeMsg').html("Dislike")
+        }
+
+
+        jQuery('#votedCount').html(
+          `(${parseInt(result.like_count) + parseInt(result.dislike_count)} Voted)`
+        );
+        jQuery('#ratingAnime').html(((parseInt(result.like_count) *
+          10 + parseInt(result.dislike_count) * 5) / (
+          parseInt(result.like_count) + parseInt(
+            result.dislike_count))).toFixed(2));
+      }
+
+    });
+  }
+</script>
 </body>
 
 </html>

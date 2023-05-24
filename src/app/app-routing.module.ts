@@ -11,6 +11,8 @@ import {MeComponent} from "./me/me.component";
 import {MoviesComponent} from "./movies/movies.component";
 import {TvShowsComponent} from "./tv-shows/tv-shows.component";
 import {AnimeListComponent} from "./anime-list/anime-list.component";
+import {AnimeDetailsComponent} from "./anime-details/anime-details.component";
+import {WatchComponent} from "./watch/watch.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path:"login", component:LoginComponent},
   { path:"me", component:MeComponent},
   { path: 'me/:name', component: MeComponent },
+  { path: 'anime/:id', component: AnimeDetailsComponent },
+  { path: 'watch/:id', component: WatchComponent },
 //  { path:"emailconfirmation", component:UserConfirmationComponent},
   { path:"forgotpassword", component:ForgotpasswordComponent},
 //  { path:"resetpassword", component:ResetpasswordComponent},

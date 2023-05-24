@@ -1,3 +1,5 @@
+import {Episode} from "./Episode";
+
 export class Anime{
     animeId?: string;
     type?: string;
@@ -7,6 +9,14 @@ export class Anime{
     animeImg?: string;
   episodeNum?: number | string;
     status?: string;
+  animeUrl?: string;
+  releasedDate?: string;
+  genres?: string[];
+  otherNames?: string[] | string;
+  synopsis?: string;
+  totalEpisodes?: number | string;
+  episodesList?: Episode[];
+
   };
 
 

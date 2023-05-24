@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Anime} from "../model/Anime";
-import {Gogoanime} from "../model/Gogoanime";
+import {Episode} from "../model/Episode";
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +38,13 @@ export class AnimeServiceService {
   getWinterAnime(year:string){
     let url = "/api/anime/season/winter-"+year+"-anime";
     return this.http.get<Anime[]>(url);
+  }
+  getAnimeDetails(id:string){
+    let url = "/api/anime/getAnime/"+id;
+    return this.http.get<Anime>(url);
+  }
+  getWatchEpisode(id:string){
+    let url = "/api/anime/watch-episode/"+id;
+    return this.http.get<Episode>(url);
   }
 }

@@ -1,0 +1,20 @@
+export class Episode {
+  episodeId?: string;
+  episodeNum?: number | string;
+  episodeUrl?: string;
+   video?:string;
+   gogoserver?:string;
+   streamsb?:string;
+   xstreamcdn?:string;
+   animeNameWithEP?:string;
+   ep_num?:string;
+   ep_download?:string;
+   anime_info!:string;
+   movie_id?:string;
+   alias?:string;
+   episode_page?:string;
+   nextEpText?:string;
+   nextEpLink?:string;
+   prevEpLink?:string;
+   prevEpText?:string;
+};
