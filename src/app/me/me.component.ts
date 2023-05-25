@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Router, ActivatedRoute, ActivatedRouteSnapshot, Params} from '@angular/router';
 import {CommentService} from "../comment/comment.service";
 
 @Component({
@@ -8,7 +8,7 @@ import {CommentService} from "../comment/comment.service";
   styleUrls: ['./me.component.css']
 })
 export class MeComponent implements OnInit {
-  name?: string;
+  name!: string;
   //posts: PostModel[];
   //comments: CommentPayload[];
 //  postLength: number;
@@ -16,8 +16,6 @@ export class MeComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private commentService: CommentService) {
-    //this.name = this.activatedRoute.snapshot.params.name;
-
   /*  this.postService.getAllPostsByUser(this.name).subscribe(data => {
       this.posts = data;
       this.postLength = data.length;
@@ -29,6 +27,10 @@ export class MeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params:Params)=>{
+        this.name=params['id'];
+      });
   }
 
 }
