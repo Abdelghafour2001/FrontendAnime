@@ -7,6 +7,7 @@ import { LoginRequestPayload } from '../login/login-request.payload';
 import { LoginResponse } from '../login/login-response.payload';
 import { map, tap } from 'rxjs/operators';
 import {User} from "../model/User";
+import {HistoryPayload} from "../model/History.payload";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class AuthService {
     refreshToken: this.getRefreshToken(),
     username: this.getUserName()
   }
-
+historyPayload!:HistoryPayload;
   constructor(private httpClient: HttpClient,
               private localStorage: LocalStorageService) {
   }
@@ -86,5 +87,8 @@ getUserData(toke:string){
 
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;
+  }
+  addToHistory(hPayload:HistoryPayload) : Observable<any> {
+    return this.httpClient.post('http://localhost:8080/api/auth/history', hPayload);
   }
 }
