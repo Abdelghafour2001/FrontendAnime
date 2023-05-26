@@ -13,6 +13,12 @@ import {TvShowsComponent} from "./tv-shows/tv-shows.component";
 import {AnimeListComponent} from "./anime-list/anime-list.component";
 import {AnimeDetailsComponent} from "./anime-details/anime-details.component";
 import {WatchComponent} from "./watch/watch.component";
+import {ViewPostComponent} from "./post/view-post/view-post.component";
+import {CreatePostComponent} from "./post/create-post/create-post.component";
+import {ListSubredditsComponent} from "./subreddit/list-subreddits/list-subreddits.component";
+import {CreateSubredditComponent} from "./subreddit/create-subreddit/create-subreddit.component";
+import {BlogHomeComponent} from "./blog-home/blog-home.component";
+import {WatchlistComponent} from "./me/watchlist/watchlist.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -22,14 +28,21 @@ const routes: Routes = [
   {path:"tv",component:TvShowsComponent},
   {path:"anime",component:AnimeListComponent},
   { path:"login", component:LoginComponent},
-  // { path:"me", component:MeComponent},
+   { path:"me", component:MeComponent},
   { path: 'me/:id', component: MeComponent },
+  { path: 'user/watchlist', component: WatchlistComponent },
   { path: 'anime/:id', component: AnimeDetailsComponent },
   { path: 'watch/:id', component: WatchComponent },
-//  { path:"emailconfirmation", component:UserConfirmationComponent},
+  { path: 'blog', component: BlogHomeComponent },
+  { path: 'view-post/:id', component: ViewPostComponent },
+  { path: 'list-subreddits', component: ListSubredditsComponent },
+  { path: 'create-post', component: CreatePostComponent },
+  { path: 'create-subreddit', component: CreateSubredditComponent },
+  //{ path:"emailconfirmation", component:UserConfirmationComponent},
   { path:"forgotpassword", component:ForgotpasswordComponent},
-//  { path:"resetpassword", component:ResetpasswordComponent},
+  //{ path:"resetpassword", component:ResetpasswordComponent},
   { path:"**", component:NotfoundComponent} ,
+
 
 ];
 

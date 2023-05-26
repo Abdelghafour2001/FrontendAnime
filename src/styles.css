@@ -9956,7 +9956,7 @@ span#AddMalDiv #AddMal {
 @media screen and (max-width:1599px) {
 
   #wrapper,
-  .container {
+  .container2 {
     max-width: 100%
   }
 
@@ -9964,7 +9964,7 @@ span#AddMalDiv #AddMal {
     display: none
   }
 
-  .container {
+  .container2 {
     padding-left: 15px
   }
 
@@ -9972,7 +9972,7 @@ span#AddMalDiv #AddMal {
     margin-left: 60px
   }
 
-  .deslide-wrap .container {
+  .deslide-wrap .container2 {
     padding: 0
   }
 
@@ -10316,7 +10316,7 @@ span#AddMalDiv #AddMal {
     display: none
   }
 
-  #header_menu .container:before {
+  #header_menu .container2:before {
     display: none
   }
 
@@ -10851,7 +10851,7 @@ span#AddMalDiv #AddMal {
     margin: 0 !important
   }
 
-  .ls__-share .share-buttons .container {
+  .ls__-share .share-buttons .container2 {
     padding: 0
   }
 
@@ -11028,8 +11028,8 @@ span#AddMalDiv #AddMal {
     margin-top: -25px
   }
 
-  .layout-news .container #main-content,
-  .layout-news .container #main-sidebar {
+  .layout-news .container2 #main-content,
+  .layout-news .container2 #main-sidebar {
     width: 100%
   }
 

@@ -1,18 +1,15 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css',
-    '../../assets/files/css/style.css'
+  styleUrls: ['./header.component.css'
   ]
 })
 export class HeaderComponent  implements OnInit {
-  faUser = faUser;
   isLoggedIn?: boolean;
   username?: string;
 
@@ -24,6 +21,10 @@ activ=true;
   toggle(){
     this.activ= !this.activ;
   }
+  activUserdrop=true;
+  toggleUser(){
+    this.activUserdrop= !this.activUserdrop;
+  }
   ngOnInit() {
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
     this.authService.username.subscribe((data: string) => this.username = data);
@@ -32,7 +33,7 @@ activ=true;
   }
 
   goToUserProfile() {
-    this.router.navigateByUrl('/user-profile/' + this.username);
+    this.router.navigateByUrl('/me/' + this.username);
   }
 
   logout() {

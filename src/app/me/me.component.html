@@ -7,11 +7,11 @@
       <div class="ph-tabs">
         <div class="bah-tabs">
           <ul class="nav nav-tabs pre-tabs">
-            <li class="nav-item"><a class="nav-link active" href="<?=$websiteUrl?>/user/profile"><i
+            <li class="nav-item"><a class="nav-link active" href="/me"><i
               class="fas fa-user mr-2"></i>Profile</a></li>
-            <li class="nav-item"><a class="nav-link " href="<?=$websiteUrl?>/user/watchlist"><i class="fas fa-heart mr-2"></i>Watch
+            <li class="nav-item"><a class="nav-link " href="/user/watchlist"><i class="fas fa-heart mr-2"></i>Watch
               List</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?=$websiteUrl?>/user/changepass"><i class="fas fa-key mr-2"></i>Change
+            <li class="nav-item"><a class="nav-link" href="/user/changepass"><i class="fas fa-key mr-2"></i>Change
               Password</a></li>
           </ul>
         </div>
@@ -20,46 +20,31 @@
     </div>
   </div>
   <div class="profile-content">
-    <div class="container">
+    <div class="container2">
       <div class="profile-box profile-box-account makeup">
         <h2 class="h2-heading mb-4"><i class="fas fa-user mr-3"></i>Your Profile</h2>
         <div class="block_area-content">
           <div class="show-profile-avatar text-center mb-3">
             <div class="profile-avatar d-inline-block" data-toggle="modal" data-target="#modalavatars">
-             <!-- <?php
-                   $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-                   if(mysqli_num_rows($select) > 0){
-              $fetch = mysqli_fetch_assoc($select);
-              }
-              if($fetch['image'] == ''){
-              echo '<img id="preview-avatar" src="'.$websiteUrl.'/files/avatar/default/default.jpeg">';
-              }else{
-              echo '<img id="preview-avatar" src="'.$websiteUrl.'/files/avatar/'.$fetch['image'].'">';
-              }?>-->
+            <img src="/assets/files/avatar/user-12.jpeg" alt="user">
             </div>
           </div>
-          <form class="preform" method="post" id="profile-form">
+          <form class="preform" [formGroup]="reactiveFrom" (ngSubmit)="onSubmit()"  >
             <input type="hidden" name="avatar_id" value="1">
             <div class="row">
               <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="form-group">
                   <label class="prelabel" for="pro5-email">Email address</label>
-                  <input type="email" name="email" class="form-control" disabled id="pro5-email"
-                         value="<?php echo $fetch['email']; ?>">
-                </div>
+                  <input type="email" name="email" class="form-control"  id="pro5-email"
+                         formControlName="email">
               </div>
               <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="form-group">
                   <label class="prelabel" for="pro5-name">Username</label>
-                  <input type="text" class="form-control" disabled id="pro5-name" name="name" required
-                         value="<?php echo $fetch['name']; ?>">
-                </div>
+                  <input type="text" class="form-control"  id="pro5-name" name="name" required formControlName="name"
+                         >
               </div>
               <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="form-group">
                   <label class="prelabel" for="pro5-join">Joined</label>
-                  <input type="text" class="form-control" disabled id="pro5-join" value="<?php echo $fetch['date']; ?>">
-                </div>
+                  <input type="text" class="form-control"  id="pro5-join" formControlName="created">
               </div>
             </div>
           </form>
@@ -68,33 +53,33 @@
     </div>
     <div class="clearfix"></div>
   </div>
-</div>
-
-<!--<div class="container">
-  <div>
-    Welcome <b>{{name}}</b>.<br /> You have posted <b>{{postLength}}</b> time(s) and commented
-    <b>{{commentLength}}</b> time(s).
-    You can check your post and comment history below.
-  </div>
-  <hr />
-  <div>
-    Your Posts:
-  </div>
-  <app-post-tile [posts]="posts"></app-post-tile>
-  <hr />
-  <div>
-    Your Comments:
-  </div>
-  <div *ngFor="let comment of comments">
-    <div class="comment">
-      <div class="username">
-        <a routerLink="/user/comment.username">{{comment.userName}}</a>
-      </div>
-      <div>
-        <p>{{comment.duration}}</p>
-      </div>
-      <b>{{comment.text}}</b>
+  <div class="container">
+    <div>
+      Welcome <b>{{name}}</b>.<br /> You have posted <b>{{postLength}}</b> time(s) and commented
+      <b>{{commentLength}}</b> time(s).
+      You can check your post and comment history below.
     </div>
     <hr />
+    <div>
+      Your Posts:
+    </div>
+    <app-post-tile [posts]="posts"></app-post-tile>
+    <hr />
+    <div>
+      Your Comments:
+    </div>
+    <div *ngFor="let comment of comments">
+      <div class="comment">
+        <div class="username">
+          <a routerLink="/user/comment.username">{{comment.username}}</a>
+        </div>
+        <div>
+          <p>{{comment.duration}}</p>
+        </div>
+        <b>{{comment.text}}</b>
+      </div>
+      <hr />
+    </div>
   </div>
-</div>-->
+</div>
+

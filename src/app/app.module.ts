@@ -10,7 +10,6 @@ import { SidebarComponent } from './slidebar/sidebar.component';
 import { TrendingComponent } from './trending/trending.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AnimeServiceService} from "./services/anime-service.service";
 import { AnimeFeaturedComponent } from './anime-featured/anime-featured.component';
@@ -40,6 +39,16 @@ import { AnimeDetailsComponent } from './anime-details/anime-details.component';
 import { RecentReleasesComponent } from './recent-releases/recent-releases.component';
 import { DisqusComponent } from './disqus/disqus.component';
 import { WatchComponent } from './watch/watch.component';
+import {ViewPostComponent} from "./post/view-post/view-post.component";
+import {CreatePostComponent} from "./post/create-post/create-post.component";
+import {SubredditSideBarComponent} from "./shared/subreddit-side-bar/subreddit-side-bar.component";
+import {CreateSubredditComponent} from "./subreddit/create-subreddit/create-subreddit.component";
+import {ListSubredditsComponent} from "./subreddit/list-subreddits/list-subreddits.component";
+import {VoteButtonComponent} from "./shared/vote-button/vote-button.component";
+import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import {PostTileComponent} from "./shared/post-tile/post-tile.component";
+import { WatchlistComponent } from './me/watchlist/watchlist.component';
 
 
 @NgModule({
@@ -57,8 +66,13 @@ import { WatchComponent } from './watch/watch.component';
     LatestSubComponent,
     ContinueWatchingComponent,
     GenresComponent,
+    PostTileComponent,
     TrendingsidenavComponent,
-
+    ViewPostComponent,
+    CreatePostComponent,
+    SubredditSideBarComponent,
+    CreateSubredditComponent,
+    ListSubredditsComponent,
     NotfoundComponent,
     MeComponent,
     LoginComponent,
@@ -71,22 +85,24 @@ import { WatchComponent } from './watch/watch.component';
     RecentReleasesComponent,
     DisqusComponent,
     WatchComponent,
+    VoteButtonComponent,
+    BlogHomeComponent,
+    SideBarComponent,
+    WatchlistComponent
 
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgxUsefulSwiperModule,
-    FormsModule,
-    AppRoutingModule,
-    NgxWebstorageModule.forRoot(),
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-   // FontAwesomeModule,
-    NgbModule,EditorModule,
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgxUsefulSwiperModule,
+        AppRoutingModule,
+        NgxWebstorageModule.forRoot(),
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        NgbModule, EditorModule,
+    ],
   providers: [AnimeServiceService,MovieServiceService,AuthService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

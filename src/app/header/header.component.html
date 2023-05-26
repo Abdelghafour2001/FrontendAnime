@@ -77,15 +77,16 @@
           <div class="hst-icon"><i class="fas fa-film"></i></div>
           <div class="name"><span>Movie</span></div>
         </a>
-        <a href="#" class="hst-item" data-toggle="tooltip"
+        <a href="/blog" class="hst-item" data-toggle="tooltip"
            data-original-title="Select Random Anime">
           <div class="hst-icon"><i class="fas fa-random"></i></div>
-          <div class="name"><span>Popular</span></div>
+          <div class="name"><span>Blog</span></div>
         </a>
+
         <div class="clearfix"></div>
       </div>
     </div>
-    <div id="pick_menu">
+  <div id="pick_menu">
       <div class="pick_menu-ul">
         <ul class="ulclear">
           <li class="pmu-item pmu-item-home">
@@ -115,75 +116,54 @@
         </ul>
       </div>
     </div>
- <!--   <?php
 
-
-        if (isset($_COOKIE['userID'])) {
-            $user_id = $_COOKIE['userID'] ?>
-    <?php
-            $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-            if (mysqli_num_rows($select) > 0) {
-    $fetch = mysqli_fetch_assoc($select);
-    }
-    ?>
-    <div id="header_right">
+    <div id="header_right" >
       <div id="user-slot">
         <div class="header_right-user logged">
-          <div class="dropdown">
+          <div (click)="toggleUser()" *ngIf="username!=null" [ngClass]="activUserdrop?'dropdown':'dropdown show'">
             <div class="btn-user-avatar" data-toggle="dropdown" aria-expanded="false"
                  aria-controls="user_menu">
               <div class="profile-avatar">
-            <?php if ($fetch['image'] == '') {
-                                        echo '<img src="' . $websiteUrl . '/files/avatar/default/default.jpeg">';
-                } else {
-                echo '<img src="' . $websiteUrl . '/files/avatar/' . $fetch['image'] . '">';
-                } ?>
+            <img src="/assets/files/avatar/user-1.jpeg" alt="user">
               </div>
             </div>
-            <div id="user_menu" class="dropdown-menu dropdown-menu-right">
+            <div id="user_menu" [ngClass]="activUserdrop?'dropdown-menu dropdown-menu-right':'dropdown-menu dropdown-menu-right show'">
               <div class="dropdown-item dropdown-item-user">
                 <div class="user-detail">
                   <div class="name"><strong>
-                    <?php echo $fetch['name']; ?>
+                    {{username}}
                   </strong></div>
                   <div class="mail"><a class="__cf_email__">
-                    <?php echo $fetch['email']; ?>
+                    {{username}}
                   </a>
                   </div>
                 </div>
                 <div class="clearfix"></div>
               </div>
               <div class="grid-menu">
-                <a class="dropdown-item" href="#"><i
+                <a class="dropdown-item" (click)="goToUserProfile()"><i
                   class="fas fa-user mr-2"></i>Profile</a>
-                <a class="dropdown-item" href="#"><i
+                <a class="dropdown-item" (click)="goToUserProfile()"><i
                   class="fas fa-heart mr-2"></i>Watch List</a>
-                <a class="dropdown-item" href="#"><i
+                <a class="dropdown-item" (click)="goToUserProfile()"><i
                   class="fas fa-cog mr-2"></i>Change
                   Password</a>
                 <div class="clearfix"></div>
-
               </div>
-              <a class="dropdown-item text-right text-white" href="#">Logout<i
+              <a class="dropdown-item text-right text-white" (click)="logout()">Logout<i
                 class="fas fa-arrow-right ml-2 mr-1"></i></a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <?php } ?>-->
-
-
- <!--   <?php if (!isset($_COOKIE['userID'])) { ?>-->
-    <div id="header_right">
-      <div id="user-slot">
-        <div class="header_right-user">
+        <div class="header_right-user" *ngIf="username==null">
           <a href="/login" class="btn-user btn btn-sm btn-primary btn-login">
             <!--<i class="fa-solid fa-user"></i>-->Login</a>
         </div>
       </div>
     </div>
-  <!--  <?php } ?>-->
+
+
+
     <div id="mobile_search" class=""><i class="fa fa-search"></i></div>
     <div class="clearfix"></div>
   </div>

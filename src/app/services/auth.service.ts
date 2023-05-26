@@ -6,6 +6,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { LoginRequestPayload } from '../login/login-request.payload';
 import { LoginResponse } from '../login/login-response.payload';
 import { map, tap } from 'rxjs/operators';
+import {User} from "../model/User";
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,10 @@ export class AuthService {
       return true;
     }));
   }
-
+getUserData(toke:string){
+  let url = "/api/api/auth/getAccountData/"+this.localStorage.retrieve('username');
+  return this.httpClient.get<User>(url);
+}
   getJwtToken() {
     return this.localStorage.retrieve('authenticationToken');
   }
