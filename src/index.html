@@ -6,6 +6,21 @@
   <base href="/">
   <link rel="stylesheet" href="/assets/files/css/style.css">
   <link rel="stylesheet" href="/assets/files/css/min.css">
+  <script src="https://cdn.tiny.cloud/1/6ajtd8689pjmnhyihjwynqj94jocn5p2g43s2z0quxyoynx2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    mergetags_list: [
+      { value: 'First.Name', title: 'First Name' },
+      { value: 'Email', title: 'Email' },
+    ]
+  });
+</script>
   <script type="text/javascript">
     setTimeout(function() {
       var wpse326013 = document.createElement('link');
