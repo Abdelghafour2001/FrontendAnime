@@ -49,7 +49,8 @@ import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import {PostTileComponent} from "./shared/post-tile/post-tile.component";
 import { WatchlistComponent } from './me/watchlist/watchlist.component';
-
+import { AdminComponent } from './admin/admin.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,9 @@ import { WatchlistComponent } from './me/watchlist/watchlist.component';
     VoteButtonComponent,
     BlogHomeComponent,
     SideBarComponent,
-    WatchlistComponent
+    WatchlistComponent,
+    AdminComponent,
+    CommentComponent
 
   ],
     imports: [
