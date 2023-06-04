@@ -1,0 +1,18 @@
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.author {
+  font-style: italic;
+}
+
+.created-date {
+  font-size: 12px;
+  color: #888;
+}
