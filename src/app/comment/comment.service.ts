@@ -13,7 +13,7 @@ export class CommentService {
   constructor(private httpClient: HttpClient) { }
 
   getAllCommentsForPost(postId: number): Observable<CommentPayload[]> {
-    return this.httpClient.get<CommentPayload[]>(this.apiUrl + postId);
+    return this.httpClient.get<CommentPayload[]>("/api/api/comments?postId="+ postId);
   }
   getComments(): Observable<Comment[]> {
     return this.httpClient.get<Comment[]>(this.apiUrl);
@@ -23,7 +23,7 @@ export class CommentService {
   }
 
   getAllCommentsByUser(name: string) {
-    return this.httpClient.get<CommentPayload[]>('/api/api/comments/by-user/' + name);
+    return this.httpClient.get<CommentPayload[]>('/api/api/comments?username=' + name);
   }
 }
 

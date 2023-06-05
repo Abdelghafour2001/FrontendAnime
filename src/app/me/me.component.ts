@@ -24,19 +24,21 @@ export class MeComponent implements OnInit {
   user!:User;
   reactiveFrom!:FormGroup;
   constructor(private activatedRoute: ActivatedRoute, private postService:PostService, private commentService: CommentService,private authService:AuthService) {
-    /* this.postService.getAllPostsByUser(this.name).subscribe(data => {
-       this.posts = data;
-       this.postLength = data.length;
-     });
-     this.commentService.getAllCommentsByUser(this.name).subscribe(data => {
-       this.comments = data;
-       this.commentLength = data.length;
-     });
-      this.;*/}
+
+     }
 
   ngOnInit(): void {
     this.name=this.authService.getUserName();
-    console.log(this.name);
+    console.log(this.name);this.commentService.getAllCommentsByUser(this.name).subscribe(data => {
+      this.comments = data;
+      this.commentLength = data.length;
+    });
+    this.postService.getAllPostsByUser(this.name).subscribe(data => {
+      this.posts = data;
+      this.postLength = data.length;
+    });
+
+
     this.authService.getUserData(this.name).subscribe(data => {
       this.user = data;
       this.reactiveFrom = new FormGroup({
