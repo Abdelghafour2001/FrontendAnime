@@ -21,10 +21,10 @@ export class PostService {
   }
 
   getPost(id: number): Observable<PostModel> {
-    return this.http.get<PostModel>('/posts/api/posts/' + id);
+    return this.http.get<PostModel>('/api/api/posts/' + id);
   }
 
   getAllPostsByUser(name: string): Observable<PostModel[]> {
-    return this.http.get<PostModel[]>('/posts/api/posts/by-user/' + name);
+    return this.http.get<PostModel[]>('/api/api/posts/by-user/' + name);
   }
 }

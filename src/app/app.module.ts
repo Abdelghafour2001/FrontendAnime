@@ -51,6 +51,7 @@ import {PostTileComponent} from "./shared/post-tile/post-tile.component";
 import { WatchlistComponent } from './me/watchlist/watchlist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CommentComponent } from './comment/comment.component';
+import { WatchMovieComponent } from './watch-movie/watch-movie.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { CommentComponent } from './comment/comment.component';
     SideBarComponent,
     WatchlistComponent,
     AdminComponent,
-    CommentComponent
+    CommentComponent,
+    WatchMovieComponent
 
   ],
     imports: [
