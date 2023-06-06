@@ -4,8 +4,12 @@ import {Anime} from "../model/Anime";
 import {HistoryPayload} from "../model/History.payload";
 import {AuthService} from "../services/auth.service";
 import {AnimeServiceService} from "../services/anime-service.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {DomSanitizer} from "@angular/platform-browser";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CommentPayload} from "../comment/comment.payload";
+import {CommentService} from "../comment/comment.service";
+import {throwError} from "rxjs";
 
 @Component({
   selector: 'app-watch-movie',
@@ -21,16 +25,29 @@ export class WatchMovieComponent implements OnInit {
   sanitizedBlobUrl: any;
   historyPayload!:HistoryPayload;
   genres?:string[];
-  name?:string;
+  name?:string
+  commentForm!: FormGroup;
+  commentPayload!: CommentPayload;
+  comments?: CommentPayload[];
   constructor(private authService: AuthService,private service: AnimeServiceService,private activatedRoute: ActivatedRoute,
-              private sanitizer: DomSanitizer) {
+              private commentService: CommentService, private router: Router,private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
+
+    this.commentForm = new FormGroup({
+      text: new FormControl('', Validators.required)
+    });
+    this.commentPayload = {
+      text: '',
+      episodeId: this.episodeId
+    };
+    this.getCommentsForEpisode();
     this.name=this.authService.getUserName();
     this.activatedRoute.params.subscribe(
       (params:Params)=>{
         this.episodeId=params['id'];
+        this.commentPayload.episodeId = this.episodeId;
       }
     );
     this.service.getWatchEpisode(this.episodeId).subscribe(data=>{
@@ -44,6 +61,7 @@ export class WatchMovieComponent implements OnInit {
           url:this.episode?.episodeUrl,
           username:this.name,
           anime_id:this.episodeId,
+
           type:this.anime?.type,
           released:this.anime?.releasedDate,
           animeTitle:this.anime?.animeTitle,
@@ -59,5 +77,32 @@ export class WatchMovieComponent implements OnInit {
 
 
   }
+
+
+
+  postComment() {
+    this.commentPayload = {
+      text: '',
+      episodeId: this.episodeId
+    };
+    this.commentPayload.text = this.commentForm.get('text')?.value;
+
+    this.commentService.postComment(this.commentPayload).subscribe(data => {
+      this.commentForm.get('text')?.setValue('');
+      this.getCommentsForEpisode();
+    }, error => {
+      throwError(error);
+    })
+  }
+
+  private getCommentsForEpisode() {
+    this.commentService.getAllCommentsForEpisode(this.episodeId).subscribe(data => {
+      this.comments = data;
+      console.log(this.episodeId)
+    }, error => {
+      throwError(error);
+    });
+  }
+
 
 }

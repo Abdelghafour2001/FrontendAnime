@@ -19,12 +19,14 @@ import {ListSubredditsComponent} from "./subreddit/list-subreddits/list-subreddi
 import {CreateSubredditComponent} from "./subreddit/create-subreddit/create-subreddit.component";
 import {BlogHomeComponent} from "./blog-home/blog-home.component";
 import {WatchlistComponent} from "./me/watchlist/watchlist.component";
+import {WatchMovieComponent} from "./watch-movie/watch-movie.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
   { path:"home", component:HomeComponent},
   { path:"register", component:SignupComponent},
   { path:"movies", component:MoviesComponent} ,
+  {path:"movie/:id", component:WatchMovieComponent} ,
   {path:"tv",component:TvShowsComponent},
   {path:"anime",component:AnimeListComponent},
   { path:"login", component:LoginComponent},

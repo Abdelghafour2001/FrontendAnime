@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Anime} from "../model/Anime";
 import {Movie} from "../model/Movie";
 import {Genre} from "../model/Genre";
+import {Episode} from "../model/Episode";
 
 
 @Injectable({
@@ -23,5 +24,9 @@ export class MovieServiceService {
   getAllGenres(){
     let url = "/api/movies/all-genres";
     return this.http.get<Genre[]>(url);
+  }
+  getWatchEpisode(id:string){
+    let url = "/api/anime/watch-episode/"+id;
+    return this.http.get<Episode>(url);
   }
 }
