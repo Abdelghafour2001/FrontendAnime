@@ -10,7 +10,10 @@ export class AnimeServiceService {
  url:string|undefined;
   constructor(private http:HttpClient) { }
 
-
+  getAnimeGenreList(genre:string,page:string){
+    let url = "/api/anime/genre/"+genre+"?page="+page;
+    return this.http.get<Anime[]>(url);
+  }
   getPopular(){
     let url = "/api/anime/popular-anime";
     return this.http.get<Anime[]>(url);

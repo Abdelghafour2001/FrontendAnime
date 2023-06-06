@@ -1,0 +1,85 @@
+<div id="main-wrapper">
+  <div class="container2">
+    <div id="main-content">
+
+      <div class="block_area-header">
+        <div class="float-left bah-heading mr-4">
+          <h2 class="cat-heading">Movies</h2>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="tab-content">
+        <div class="block_area-content block_area-list film_list film_list-grid film_list-wfeature">
+          <div class="film_list-wrap"  *ngFor="let mov of movies; let i = index;">
+            <div class="flw-item">
+              <div class="film-poster">
+                <div class="tick ltr">
+                  <div class="tick-item-dub-tick-eps amp-algn"></div>
+                </div>
+                <div class="tick rtl">
+                </div>
+                <img class="film-poster-img lazyload"
+                     src="{{mov.image}}"
+                     alt="{{mov.title}}">
+                <a class="film-poster-ahref"
+                   href="/movies/{{mov.title}}"
+                   title="{{mov.title}}"><i class="fas fa-play"></i></a>
+              </div>
+              <div class="film-detail">
+                <h3 class="film-name">
+                  <a
+                    href="/movies/{{mov.title}}"
+                    title="{{mov.title}}"
+                  >{{mov.title}}</a>
+                </h3>
+                <div class="description">{{mov.releaseDate}}</div>
+                <div class="fd-infor">
+                  <span class="fdi-item"> Duration {{mov.duration}} </span>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <style>
+            .cus_pagi {
+              margin-top: 7px;
+            }
+
+            div.cus_pagi input {
+              background: #575757;
+              color: #fff;
+              border: 0;
+              width: 56px;
+              text-align: center;
+              border-radius: 2px;
+              height: 28px;
+              outline: 0;
+            }
+
+            button.btn.btn-xs.btn-primary {
+              padding: 7px 11px;
+              height: 26px;
+              margin-top: 12px;
+              border-radius: 2px;
+            }
+          </style>
+          <div class="pagination">
+            <nav>
+              <ul class="ulclear az-list">
+                <?=$moviePage['pagination']; ?>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="main-sidebar">
+      <app-movies-genres></app-movies-genres>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

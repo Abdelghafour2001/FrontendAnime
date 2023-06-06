@@ -39,7 +39,8 @@ activ=true;
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;
-    this.router.navigateByUrl('');
+    //window.location.reload();
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <hr />
+    <div class="create-post-container col-md-9">
+      <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+        <div class="form-group">
+          <div class="create-post-heading">Create Movie</div>
+          <hr />
+          <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px"
+                 placeholder="Title">
+          <input type="text" class="form-control" [formControlName]="'image'" style="margin-top: 5px" placeholder="Image Url">
+          <input type="text" class="form-control" [formControlName]="'releaseDate'" style="margin-top: 5px" placeholder="Release Date">
+          <input type="text" class="form-control" [formControlName]="'duration'" style="margin-top: 5px" placeholder="Duration">
+
+          <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
+
+          <select class="form-control" style="margin-top: 10px" [formControlName]="'type'">
+            <option value="" selected disabled>Select Genre</option>
+            <option *ngFor="let genre of genres">{{genre.title}}</option>
+          </select>
+
+          <editor [formControlName]="'description'" [init]="{
+                        height: 500,
+                        menubar: false,
+
+
+                      }"></editor>
+          <span>
+              <div style="margin-top: 5px" class="float-right">
+                <button (click)="discardMovie()" class="btnDiscard">Discard</button>
+                <button class="btnCreatePost">Post</button>
+              </div>
+            </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

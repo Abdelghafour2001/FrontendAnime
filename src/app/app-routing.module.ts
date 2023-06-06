@@ -20,6 +20,8 @@ import {CreateSubredditComponent} from "./subreddit/create-subreddit/create-subr
 import {BlogHomeComponent} from "./blog-home/blog-home.component";
 import {WatchlistComponent} from "./me/watchlist/watchlist.component";
 import {WatchMovieComponent} from "./watch-movie/watch-movie.component";
+import {OurMoviesComponent} from "./our-movies/our-movies.component";
+import {CreateEpisodeComponent} from "./create-episode/create-episode.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -39,7 +41,11 @@ const routes: Routes = [
   { path: 'view-post/:id', component: ViewPostComponent },
   { path: 'list-subreddits', component: ListSubredditsComponent },
   { path: 'create-post', component: CreatePostComponent },
+  { path: 'genre/:genre', component: AnimeListComponent },
   { path: 'create-subreddit', component: CreateSubredditComponent },
+  { path: 'our-movies', component: OurMoviesComponent },
+  { path: 'create-movie', component: CreateEpisodeComponent },
+
   //{ path:"emailconfirmation", component:UserConfirmationComponent},
   { path:"forgotpassword", component:ForgotpasswordComponent},
   //{ path:"resetpassword", component:ResetpasswordComponent},

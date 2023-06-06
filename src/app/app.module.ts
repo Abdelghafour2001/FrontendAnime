@@ -51,6 +51,9 @@ import { WatchlistComponent } from './me/watchlist/watchlist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CommentComponent } from './comment/comment.component';
 import { WatchMovieComponent } from './watch-movie/watch-movie.component';
+import { CreateEpisodeComponent } from './create-episode/create-episode.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { OurMoviesComponent } from './our-movies/our-movies.component';
 
 @NgModule({
   declarations: [
@@ -91,10 +94,13 @@ import { WatchMovieComponent } from './watch-movie/watch-movie.component';
     WatchlistComponent,
     AdminComponent,
     CommentComponent,
-    WatchMovieComponent
+    WatchMovieComponent,
+    CreateEpisodeComponent,
+    OurMoviesComponent
 
   ],
     imports: [
+      MatPaginatorModule,
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,

@@ -4,6 +4,12 @@ import {Anime} from "../model/Anime";
 import {Movie} from "../model/Movie";
 import {Genre} from "../model/Genre";
 import {Episode} from "../model/Episode";
+import {CreatePostPayload} from "../post/create-post/create-post.payload";
+import {Observable} from "rxjs";
+import {CreateEpisodePayload} from "../create-episode/create-episode.payload";
+import {OurMovie} from "../model/OurMovie";
+
+
 
 
 @Injectable({
@@ -28,5 +34,12 @@ export class MovieServiceService {
   getWatchEpisode(id:string){
     let url = "/api/anime/watch-episode/"+id;
     return this.http.get<Episode>(url);
+  }
+  createMovie(postPayload: CreateEpisodePayload): Observable<CreateEpisodePayload> {
+    return this.http.post<CreateEpisodePayload>('/api/api/admin', postPayload);
+  }
+  getOurMovies(){
+    let url = "/api/movies/getOurMovies";
+    return this.http.get<OurMovie[]>(url);
   }
 }
