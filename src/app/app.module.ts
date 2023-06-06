@@ -37,7 +37,6 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { AnimeDetailsComponent } from './anime-details/anime-details.component';
 import { RecentReleasesComponent } from './recent-releases/recent-releases.component';
-import { DisqusComponent } from './disqus/disqus.component';
 import { WatchComponent } from './watch/watch.component';
 import {ViewPostComponent} from "./post/view-post/view-post.component";
 import {CreatePostComponent} from "./post/create-post/create-post.component";
@@ -85,7 +84,6 @@ import { WatchMovieComponent } from './watch-movie/watch-movie.component';
     AnimeListComponent,
     AnimeDetailsComponent,
     RecentReleasesComponent,
-    DisqusComponent,
     WatchComponent,
     VoteButtonComponent,
     BlogHomeComponent,

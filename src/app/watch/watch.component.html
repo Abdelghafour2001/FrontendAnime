@@ -290,7 +290,26 @@
           <div class="clearfix"></div>
         </div>
         <div class="tab-content">
-          <app-disqus></app-disqus>
+          <div class="post-comment">
+            <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+              <div class="form-group">
+                <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
+              </div>
+              <button type="submit" class="login float-right">Comment</button>
+            </form>
+          </div>
+          <div  *ngFor="let comment of comments">
+            <div class="comment" style="background:#3d404a;">
+              <div class="username">
+                <a href="#">{{comment.userName}}</a>
+              </div>
+              <div>
+                <p>{{comment?.createdDate}}</p>
+              </div>
+              <b>{{comment?.text}}</b>
+            </div>
+            <hr />
+          </div>
         </div>
       </section>
 
