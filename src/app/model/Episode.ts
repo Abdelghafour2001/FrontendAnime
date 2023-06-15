@@ -1,5 +1,6 @@
 export class Episode {
   episodeId?: string;
+  id?: string;
   episodeNum?: number | string;
   episodeUrl?: string;
    video?:string;
@@ -17,4 +18,6 @@ export class Episode {
    nextEpLink?:string;
    prevEpLink?:string;
    prevEpText?:string;
+   title?:string;
+   url?:string;
 };

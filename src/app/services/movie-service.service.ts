@@ -8,6 +8,7 @@ import {CreatePostPayload} from "../post/create-post/create-post.payload";
 import {Observable} from "rxjs";
 import {CreateEpisodePayload} from "../create-episode/create-episode.payload";
 import {OurMovie} from "../model/OurMovie";
+import {Streaming} from "../model/Streaming";
 
 
 
@@ -41,5 +42,14 @@ export class MovieServiceService {
   getOurMovies(){
     let url = "/api/movies/getOurMovies";
     return this.http.get<OurMovie[]>(url);
+  }
+  getStreamingMovie(id?:string , epId?:string){
+    let url= "/api/movies/getStreaming?mediaId="+id+"&episodeId="+epId+"&server=UpCloud";
+    return this.http.get<Streaming>(url);
+  }
+  getMovie(id:string){
+    let url = "/api/movies/getMovieInfo?mediaId=" + id;
+    return this.http.get<Movie>(url);
+
   }
 }
