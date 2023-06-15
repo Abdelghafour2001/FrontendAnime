@@ -18,9 +18,7 @@ export class CommentService {
   getAllCommentsForEpisode(episodeId: string): Observable<CommentPayload[]> {
     return this.httpClient.get<CommentPayload[]>("/api/api/comments?episodeId="+ episodeId);
   }
-  getComments(): Observable<Comment[]> {
-    return this.httpClient.get<Comment[]>(this.apiUrl);
-  }
+
   postComment(commentPayload: CommentPayload): Observable<any> {
     return this.httpClient.post<any>('/api/api/comments/', commentPayload);
   }

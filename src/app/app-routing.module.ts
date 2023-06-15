@@ -44,6 +44,7 @@ const routes: Routes = [
   { path: 'genre/:genre', component: AnimeListComponent },
   { path: 'create-subreddit', component: CreateSubredditComponent },
   { path: 'our-movies', component: OurMoviesComponent },
+  { path: 'our-movies/:id', component: WatchMovieComponent },
   { path: 'create-movie', component: CreateEpisodeComponent },
 
   //{ path:"emailconfirmation", component:UserConfirmationComponent},

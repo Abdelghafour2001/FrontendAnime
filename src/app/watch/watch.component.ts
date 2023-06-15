@@ -10,6 +10,8 @@ import {throwError} from "rxjs";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CommentService} from "../comment/comment.service";
 import {CommentPayload} from "../comment/comment.payload";
+import {MovieServiceService} from "../services/movie-service.service";
+import {OurMovie} from "../model/OurMovie";
 
 @Component({
   selector: 'app-watch',
@@ -18,6 +20,8 @@ import {CommentPayload} from "../comment/comment.payload";
 })
 export class WatchComponent implements OnInit {
   episode:Episode | undefined;
+  movies:OurMovie[] | undefined
+  movie?:OurMovie;
   anime: Anime | undefined;
   episodesList?: Episode[];
   animeId!:string ;
@@ -29,7 +33,9 @@ export class WatchComponent implements OnInit {
   commentForm!: FormGroup;
   commentPayload!: CommentPayload;
   comments?: CommentPayload[];
-  constructor(private authService: AuthService,private service: AnimeServiceService,private activatedRoute: ActivatedRoute,
+
+  constructor(private authService: AuthService,private service: AnimeServiceService,private movieService:MovieServiceService,
+              private activatedRoute: ActivatedRoute,
               private commentService: CommentService, private router: Router,private sanitizer: DomSanitizer) {
   }
 
@@ -46,8 +52,9 @@ export class WatchComponent implements OnInit {
     this.name=this.authService.getUserName();
     this.activatedRoute.params.subscribe(
       (params:Params)=>{
-        this.episodeId=params['id'];
-        this.commentPayload.episodeId = this.episodeId;
+          this.episodeId=params['id'];
+          this.commentPayload.episodeId = this.episodeId;
+
       }
     );
     this.service.getWatchEpisode(this.episodeId).subscribe(data=>{
@@ -61,7 +68,6 @@ export class WatchComponent implements OnInit {
           url:this.episode?.episodeUrl,
           username:this.name,
           anime_id:this.episodeId,
-
           type:this.anime?.type,
           released:this.anime?.releasedDate,
           animeTitle:this.anime?.animeTitle,
@@ -78,7 +84,12 @@ export class WatchComponent implements OnInit {
 
   }
 
-
+ourMovie(){
+  this.movieService.getOurMovies().subscribe(data=>{
+    this.movies=data;
+  });
+this.movie= this.movies?.find((movie) => movie.title==this.episodeId);
+}
 
   postComment() {
     this.commentPayload = {

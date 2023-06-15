@@ -10,6 +10,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CommentPayload} from "../comment/comment.payload";
 import {CommentService} from "../comment/comment.service";
 import {throwError} from "rxjs";
+import {OurMovie} from "../model/OurMovie";
+import {MovieServiceService} from "../services/movie-service.service";
 
 @Component({
   selector: 'app-watch-movie',
@@ -18,91 +20,41 @@ import {throwError} from "rxjs";
 })
 export class WatchMovieComponent implements OnInit {
   episode:Episode | undefined;
+  movies!:OurMovie[] ;
+  movie?:OurMovie;
   anime: Anime | undefined;
-  episodesList?: Episode[];
   animeId!:string ;
   episodeId!:string;
   sanitizedBlobUrl: any;
   historyPayload!:HistoryPayload;
   genres?:string[];
   name?:string
-  commentForm!: FormGroup;
   commentPayload!: CommentPayload;
   comments?: CommentPayload[];
-  constructor(private authService: AuthService,private service: AnimeServiceService,private activatedRoute: ActivatedRoute,
-              private commentService: CommentService, private router: Router,private sanitizer: DomSanitizer) {
+  constructor(private authService: AuthService,private service: AnimeServiceService,private movieService:MovieServiceService,
+                                           private activatedRoute: ActivatedRoute,
+                                           private commentService: CommentService, private router: Router,private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
-
-    this.commentForm = new FormGroup({
-      text: new FormControl('', Validators.required)
-    });
-    this.commentPayload = {
-      text: '',
-      episodeId: this.episodeId
-    };
-    this.getCommentsForEpisode();
-    this.name=this.authService.getUserName();
     this.activatedRoute.params.subscribe(
       (params:Params)=>{
         this.episodeId=params['id'];
         this.commentPayload.episodeId = this.episodeId;
       }
     );
-    this.service.getWatchEpisode(this.episodeId).subscribe(data=>{
-      this.episode=data;
-      this.animeId=data.anime_info;
-      this.service.getAnimeDetails(this.animeId).subscribe(data=>{
-        this.anime=data;
-        this.episodesList=data?.episodesList;
-        this.historyPayload = {
-          name:this.animeId,
-          url:this.episode?.episodeUrl,
-          username:this.name,
-          anime_id:this.episodeId,
+    this.ourMovie();
+  }
 
-          type:this.anime?.type,
-          released:this.anime?.releasedDate,
-          animeTitle:this.anime?.animeTitle,
-          dubOrSub:this.anime?.subOrDub,
-        }
-        this.authService.addToHistory(this.historyPayload).subscribe(data=>{
-          console.log(data);
-        });
-      });
+  ourMovie(){
+    this.movieService.getOurMovies().subscribe(data=>{
+      this.movie=data[1];
     });
-    this.sanitizedBlobUrl =
-      this.sanitizer.bypassSecurityTrustResourceUrl("https://player.anikatsu.me/index.php?id="+this.episodeId);
-
+   // this.movie= this.movies[1];
+    let url = this.movie?.url;
+    if(url!=undefined){this.sanitizedBlobUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl(url);}
 
   }
-
-
-
-  postComment() {
-    this.commentPayload = {
-      text: '',
-      episodeId: this.episodeId
-    };
-    this.commentPayload.text = this.commentForm.get('text')?.value;
-
-    this.commentService.postComment(this.commentPayload).subscribe(data => {
-      this.commentForm.get('text')?.setValue('');
-      this.getCommentsForEpisode();
-    }, error => {
-      throwError(error);
-    })
-  }
-
-  private getCommentsForEpisode() {
-    this.commentService.getAllCommentsForEpisode(this.episodeId).subscribe(data => {
-      this.comments = data;
-      console.log(this.episodeId)
-    }, error => {
-      throwError(error);
-    });
-  }
-
 
 }
