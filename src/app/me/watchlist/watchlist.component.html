@@ -1,1 +1,69 @@
-<p>watchlist works!</p>
+<div id="main-wrapper" class="layout-page layout-profile">
+  <div class="profile-header">
+    <div class="profile-header-cover"
+         style=""></div>
+    <div class="container">
+      <div class="ph-title"><?=$fetch['name']?></div>
+      <div class="ph-tabs">
+        <div class="bah-tabs">
+          <ul class="nav nav-tabs pre-tabs">
+            <li class="nav-item"><a class="nav-link" href="/user/profile"><i
+              class="fas fa-user mr-2"></i>Profile</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/user/watchlist"><i
+              class="fas fa-heart mr-2"></i>Watch List</a></li>
+            <li class="nav-item"><a class="nav-link" href="/user/changepass"><i
+              class="fas fa-key mr-2"></i>Change Password</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="profile-content">
+    <div class="container">
+      <div class="profile-box profile-list profile-list-fav">
+        <h2 class="h2-heading mb-4"><i class="fas fa-heart mr-3"></i>Watch List</h2>
+
+        <div class="block_area-content block_area-list film_list film_list-grid">
+          <div class="film_list-wrap">
+            <div class="flw-item">
+              <div class="film-poster">
+                <div class="tick ltr">
+
+                 </div>
+              </div>
+
+              <img class="film-poster-img lazyload"
+                   data-src="<?=$rows['image']?>"
+                   src="<?=$rows['image']?>"
+                   alt="<?=$rows['name']?>">
+              <a class="film-poster-ahref"
+                 href="<?=$websiteUrl?>/anime/<?=$rows['anime_id']?>" title="<?=$rows['name']?>"
+                 data-jname="<?=$rows['name']?>"><i class="fas fa-play"></i></a>
+            </div>
+            <div class="film-detail">
+              <h3 class="film-name">
+                <a class="dynamic-name"
+                   href="<?=$websiteUrl?>/anime/<?=$rows['anime_id']?>" title="<?=$rows['name']?>"
+                   data-jname="<?=$rows['name']?>"><?=$rows['name']?></a>
+              </h3>
+              <div class="fd-infor">
+                <span class="fdi-item"><?=$rows['type']?></span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="pre-pagination mt-5 mb-5">
+          <nav aria-label="Page navigation">
+          </nav>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
