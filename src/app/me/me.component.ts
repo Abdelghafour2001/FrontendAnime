@@ -44,14 +44,21 @@ export class MeComponent implements OnInit {
       this.reactiveFrom = new FormGroup({
         name: new FormControl(this.user.username),
         email: new FormControl(this.user.email),
-        created: new FormControl(this.user.created),
+        created: new FormControl(this.toDateTime(+this.user.created)),
       });
     });
 
   console.log(this.reactiveFrom.value);
   }
 
-
+  toDateTime(nm: number | undefined){
+    let dateTime: Date;
+    if(nm!=undefined)
+      dateTime = new Date(nm*1000); // Multiply by 1000 to convert seconds to milliseconds
+    else
+      dateTime=new Date(1689006162 * 1000);
+    return dateTime.toISOString();
+  }
 
   onSubmit() {
 
