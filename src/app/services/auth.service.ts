@@ -8,6 +8,7 @@ import { LoginResponse } from '../login/login-response.payload';
 import { map, tap } from 'rxjs/operators';
 import {User} from "../model/User";
 import {HistoryPayload} from "../model/History.payload";
+import {Anime} from "../model/Anime";
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,11 @@ historyPayload!:HistoryPayload;
   }
 addToWatchlist(hPayload:HistoryPayload) : Observable<any> {
   return this.httpClient.post('http://localhost:8080/api/auth/watchList', hPayload);
-
 }
+  getWatchlist() {
+      let url = "/api/api/auth/userWatchList?username="+this.localStorage.retrieve('username');
+      return this.httpClient.get<HistoryPayload[]>(url);
+  }
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
     return this.httpClient.post('http://localhost:8080/api/auth/signup', signupRequestPayload, { responseType: 'text' });
   }
