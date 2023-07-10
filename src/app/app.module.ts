@@ -54,6 +54,7 @@ import { WatchMovieComponent } from './watch-movie/watch-movie.component';
 import { CreateEpisodeComponent } from './create-episode/create-episode.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { OurMoviesComponent } from './our-movies/our-movies.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { OurMoviesComponent } from './our-movies/our-movies.component';
     CommentComponent,
     WatchMovieComponent,
     CreateEpisodeComponent,
-    OurMoviesComponent
+    OurMoviesComponent,
+    HistoryComponent
 
   ],
     imports: [

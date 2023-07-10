@@ -22,6 +22,7 @@ import {WatchlistComponent} from "./me/watchlist/watchlist.component";
 import {WatchMovieComponent} from "./watch-movie/watch-movie.component";
 import {OurMoviesComponent} from "./our-movies/our-movies.component";
 import {CreateEpisodeComponent} from "./create-episode/create-episode.component";
+import {HistoryComponent} from "./history/history.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -46,7 +47,7 @@ const routes: Routes = [
   { path: 'our-movies', component: OurMoviesComponent },
   { path: 'our-movies/:id', component: WatchMovieComponent },
   { path: 'create-movie', component: CreateEpisodeComponent },
-
+  { path:"user/viewHistory", component:HistoryComponent},
   //{ path:"emailconfirmation", component:UserConfirmationComponent},
   { path:"forgotpassword", component:ForgotpasswordComponent},
   //{ path:"resetpassword", component:ResetpasswordComponent},

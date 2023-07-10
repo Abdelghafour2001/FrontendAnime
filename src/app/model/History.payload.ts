@@ -9,5 +9,6 @@ export class HistoryPayload {
   dubOrSub?:string;
   watch_id?:number;
   watchId?:number;
+  createdDate?:number;
 
 }
