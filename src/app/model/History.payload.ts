@@ -7,5 +7,7 @@ export class HistoryPayload {
   released?:string;
   animeTitle?:string;
   dubOrSub?:string;
+  watch_id?:number;
+  watchId?:number;
 
 }

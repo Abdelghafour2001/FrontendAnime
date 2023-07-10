@@ -32,11 +32,12 @@
                 <div class="film-detail">
                   <h3 class="film-name">
                     <a
-                      href="/anime/{{ani.anime_id}}" title="{{ani.name}}"
-                    >{{ani.name}}</a>
+                      href="/anime/{{ani.anime_id}}" title="{{ani.watch_id}}"
+                    >{{ani.name}}  title="{{ani.watchId}}"</a>
                   </h3>
                   <div class="fd-infor">
-                    <span class="fdi-item">#{{i}} </span>
+                    <span class="fdi-item">#{{i}}"</span>
+                    <button type="button" class="btn btn-danger" (click)="delete(ani.watchId)">X</button>
                     <span class="dot"></span>
                   </div>
                 </div>

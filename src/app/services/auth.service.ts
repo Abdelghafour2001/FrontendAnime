@@ -33,6 +33,10 @@ addToWatchlist(hPayload:HistoryPayload) : Observable<any> {
       let url = "/api/api/auth/userWatchList?username="+this.localStorage.retrieve('username');
       return this.httpClient.get<HistoryPayload[]>(url);
   }
+  delWatchlist(id:number) : Observable<any> {
+    const url = `/api/api/auth/userWatchList/${id}`;
+    return this.httpClient.delete(url);
+  }
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
     return this.httpClient.post('http://localhost:8080/api/auth/signup', signupRequestPayload, { responseType: 'text' });
   }

@@ -21,4 +21,15 @@ export class WatchlistComponent implements OnInit {
     this.historyPayload=data);
 this.username=this.authService.getUserName();  }
 
+  delete(watchId: number|undefined) {
+    if(watchId!=undefined)
+      this.authService.delWatchlist(watchId).subscribe(
+        () => {
+          console.log('Watchlist item deleted successfully');
+        },
+        (error) => {
+          console.error('Error deleting watchlist item:', error);
+        }
+      );
+  }
 }
