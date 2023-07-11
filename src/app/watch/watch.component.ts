@@ -33,6 +33,7 @@ export class WatchComponent implements OnInit {
   commentForm!: FormGroup;
   commentPayload!: CommentPayload;
   comments?: CommentPayload[];
+  inputData: string = '';
 
   constructor(private authService: AuthService,private service: AnimeServiceService,private movieService:MovieServiceService,
               private activatedRoute: ActivatedRoute,
@@ -40,7 +41,13 @@ export class WatchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params:Params)=>{
+        this.episodeId=params['id'];
+        this.commentPayload.episodeId = this.episodeId;
 
+      }
+    );
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
@@ -48,15 +55,9 @@ export class WatchComponent implements OnInit {
       text: '',
       episodeId: this.episodeId
     };
-    this.getCommentsForEpisode();
     this.name=this.authService.getUserName();
-    this.activatedRoute.params.subscribe(
-      (params:Params)=>{
-          this.episodeId=params['id'];
-          this.commentPayload.episodeId = this.episodeId;
 
-      }
-    );
+    this.getCommentsForEpisode(this.episodeId);
     this.service.getWatchEpisode(this.episodeId).subscribe(data=>{
       this.episode=data;
       this.animeId=data.anime_info;
@@ -84,32 +85,25 @@ export class WatchComponent implements OnInit {
 
   }
 
-ourMovie(){
-  this.movieService.getOurMovies().subscribe(data=>{
-    this.movies=data;
-  });
-  this.movie= this.movies?.find((movie) => movie.title==this.episodeId);
-}
 
   postComment() {
-    this.commentPayload = {
-    text: '',
-    episodeId: this.episodeId
-  };
-    this.commentPayload.text = this.commentForm.get('text')?.value;
-
+    this.commentPayload.text = this.commentForm.get('text1')?.value;
+    this.commentPayload.text= this.inputData;
+    console.log(this.inputData);
+    console.log( this.commentForm.get('text1')?.value);
     this.commentService.postComment(this.commentPayload).subscribe(data => {
       this.commentForm.get('text')?.setValue('');
-      this.getCommentsForEpisode();
+      this.getCommentsForEpisode(this.episodeId);
     }, error => {
       throwError(error);
     })
   }
 
-  private getCommentsForEpisode() {
-    this.commentService.getAllCommentsForEpisode(this.episodeId).subscribe(data => {
+
+  private getCommentsForEpisode(epid:string) {
+    this.commentService.getAllCommentsForEpisode(epid).subscribe(data => {
       this.comments = data;
-      console.log(this.episodeId)
+      console.log("episode id "+epid)
     }, error => {
       throwError(error);
     });

@@ -44,7 +44,7 @@ export class MovieServiceService {
     return this.http.get<OurMovie[]>(url);
   }
   getOurMovie(id:string){
-    let url = "/api/movies/getOurMovie?pag="+id;
+    let url = "/api/movies/getOurMovie?page="+id;
     return this.http.get<OurMovie>(url);
   }
   getStreamingMovie(id?:string , epId?:string){
