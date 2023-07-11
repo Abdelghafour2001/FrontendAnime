@@ -6,6 +6,7 @@ import {Episode} from "../model/Episode";
 import {AuthService} from "../services/auth.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {HistoryPayload} from "../model/History.payload";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-anime-details',
@@ -34,7 +35,7 @@ export class AnimeDetailsComponent implements OnInit {
   episodesList?: Episode[];
   animeId!:string;
   genres?:string[];
-  constructor(private service: AnimeServiceService,private activatedRoute: ActivatedRoute,private router:Router,private authService: AuthService,private modalService:NgbModal) {
+  constructor( private toastr: ToastrService,private service: AnimeServiceService,private activatedRoute: ActivatedRoute,private router:Router,private authService: AuthService,private modalService:NgbModal) {
   }
 
   ngOnInit(): void {
@@ -70,6 +71,7 @@ export class AnimeDetailsComponent implements OnInit {
   }
   addWatchList(){
     this.authService.addToWatchlist(this.historyPayload).subscribe(data=>{
+    this.toastr.success('Added to watchlist');
       console.log(data);
     });
   }

@@ -11,6 +11,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class HeaderComponent  implements OnInit {
   isLoggedIn?: boolean;
+
   username?: string;
 
   constructor(private authService: AuthService, private router: Router,private modalService:NgbModal) { }
@@ -46,7 +47,6 @@ activ=true;
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;
-    //window.location.reload();
     this.router.navigateByUrl('/login');
   }
 

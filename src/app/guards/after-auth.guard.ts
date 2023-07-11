@@ -7,18 +7,14 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class AfterAuthGuard implements CanActivate {
-  constructor(private router:Router, private authService:AuthService) {
-  }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):  boolean {
-
-    if(this.authService.isLoggedIn())
-    {
-      this.router.navigateByUrl('/');
+  canActivate(): boolean {
+    if (this.authService.isLoggedIn() && this.authService.getUserName()=="Abdelghafour12") {
+      return true;
+    } else {
+      this.router.navigate(['/login']); // Redirect to login page or unauthorized page
       return false;
     }
-
-    return true;
   }
-
 }

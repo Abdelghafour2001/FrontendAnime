@@ -7,11 +7,14 @@
       <span class="subreddit-text"><a class="posturl" routerLink="">{{post.subredditName}}</a></span>
       <span> . Posted by <a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
       <span> . {{post.duration}}</span>
+            <span> . {{post.voteCount}} Votes</span>
+
     </span>
     <hr />
     <div class="post-title">
       <a class="postname" href="{{post.url}}">{{post.postName}}</a>
     </div>
+    <hr/>
     <div [innerHTML]="post.description">
 
     </div>
@@ -24,6 +27,8 @@
       <button class="login btn-user btn btn-sm btn-primary btn-login"  (click)="goToPost(post.id)">
         Read Post
       </button>
+      <button *ngIf="username==post.userName" type="button" class="btn btn-sm btn-danger" (click)="delete(post.id)">Delete</button>
+
     </span>
   </div>
 </div>
