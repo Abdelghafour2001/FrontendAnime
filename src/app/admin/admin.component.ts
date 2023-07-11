@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {User} from "../model/User";
 import {PostModel} from "../shared/post-model";
+import {OurMovie} from "../model/OurMovie";
+import {MovieServiceService} from "../services/movie-service.service";
 
 @Component({
   selector: 'app-admin',
@@ -9,21 +11,25 @@ import {PostModel} from "../shared/post-model";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit{
-  inputData1: number = 0;
-  inputData2: number = 0;
-  inputData3: number = 0;
-  users: User[] = [];
-  tableColumns: string[] = ['userId', 'username', 'email', 'created'];
-  comments: Comment[] = [];
-  tableColumns2: string[] = ['id', 'text', 'createdDate', 'user'];
-  posts: Array<PostModel> = [];
-  tableColumns3: string[] = ['id', 'postName', 'userName', 'description'];
 
-  constructor(private http: HttpClient) {}
+  movies:OurMovie[] =[];
+  tableColumns4: string[] = ['url', 'title', 'description','Actions'];
+
+  users: User[] = [];
+  tableColumns: string[] = ['userId', 'username', 'email', 'created','Actions'];
+  comments: Comment[] = [];
+  tableColumns2: string[] = ['id', 'text', 'createdDate', 'user','Actions'];
+  posts: Array<PostModel> = [];
+  tableColumns3: string[] = ['id', 'postName', 'userName', 'description','Actions'];
+
+  constructor(private http: HttpClient,private service:MovieServiceService) {}
   ngOnInit() {
     this.getUsers();
     this.getComments();
 this.getPosts();
+    this.service.getOurMovies().subscribe(data=>{
+      this.movies=data;
+    });
   }
   getPosts() {
     this.http.get<PostModel[]>('/api/api/posts').subscribe(

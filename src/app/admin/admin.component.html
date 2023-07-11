@@ -21,7 +21,11 @@
       <th mat-header-cell *matHeaderCellDef> Created </th>
       <td mat-cell *matCellDef="let user"> {{ toDateTime(user.created) }} </td>
     </ng-container>
-
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let user">   <button (click)="deleteUser(user.userId)" class="delete-button">Delete User</button>
+      </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
     <tr mat-row *matRowDef="let user; columns: tableColumns;"></tr>
   </table>
@@ -48,7 +52,10 @@
       <td mat-cell *matCellDef="let comment"> {{ comment.userName }} </td>
     </ng-container>
 
-
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let comment"> <button (click)="deleteComment(comment.id)" class="delete-button">Delete Comment</button> </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="tableColumns2"></tr>
     <tr mat-row *matRowDef="let comment; columns: tableColumns2;"></tr>
@@ -74,15 +81,35 @@
       <th mat-header-cell *matHeaderCellDef> Description </th>
       <td mat-cell *matCellDef="let post"> {{ post.description }} </td>
     </ng-container>
-
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let post">  <button (click)="deletePost(post.id)" class="delete-button">Delete Post</button> </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="tableColumns3"></tr>
     <tr mat-row *matRowDef="let post; columns: tableColumns3;"></tr>
   </table>
 
-  <input type="text" [(ngModel)]="inputData1" placeholder="Enter Post Title..."/>
-  <button (click)="deletePost(inputData1)" class="delete-button">Delete Post</button>
-  <input type="text" [(ngModel)]="inputData2" placeholder="Enter Username here...">
-  <button (click)="deleteUser(inputData2)" class="delete-button">Delete User</button>
-  <input type="text" [(ngModel)]="inputData3" placeholder="Enter Comment id here...">
-  <button (click)="deleteComment(inputData3)" class="delete-button">Delete Comment</button>
+  <h3>Our Movies</h3>
+  <table mat-table [dataSource]="movies" class="post-table">
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef> url </th>
+      <td mat-cell *matCellDef="let our"> {{ our.url }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let post"> {{ post.title }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let post"> {{ post.description }} </td>
+    </ng-container>
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let movie">  <button (click)="deletePost(movie.id)" class="delete-button">Delete Movie</button> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="tableColumns4"></tr>
+    <tr mat-row *matRowDef="let post; columns: tableColumns4;"></tr>
+  </table>
 </div>
