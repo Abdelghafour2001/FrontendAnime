@@ -6,6 +6,9 @@
   <base href="/">
   <link rel="stylesheet" href="/assets/files/css/style.css">
   <link rel="stylesheet" href="/assets/files/css/min.css">
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
   <script src="https://cdn.tiny.cloud/1/6ajtd8689pjmnhyihjwynqj94jocn5p2g43s2z0quxyoynx2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script>
@@ -50,6 +53,11 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+
+  <script>
+    var player = videojs('my_video_1');
+    player.play();
+  </script>
   <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>

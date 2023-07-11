@@ -43,6 +43,10 @@ export class MovieServiceService {
     let url = "/api/movies/getOurMovies";
     return this.http.get<OurMovie[]>(url);
   }
+  getOurMovie(id:string){
+    let url = "/api/movies/getOurMovie?pag="+id;
+    return this.http.get<OurMovie>(url);
+  }
   getStreamingMovie(id?:string , epId?:string){
     let url= "/api/movies/getStreaming?mediaId="+id+"&episodeId="+epId+"&server=UpCloud";
     return this.http.get<Streaming>(url);

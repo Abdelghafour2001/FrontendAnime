@@ -42,13 +42,18 @@
                     <div class="span3"></div>
                   </div>
                 </div>
-                <!---recommended to use Anikatsu Servers only-->
+                <!---recommended to use Anikatsu Servers only
                 <iframe name="iframe-to-load"
-                        src="" frameborder="0"
+                        src="{{sanitizedBlobUrl}}" frameborder="0"
                         scrolling="no"
                         allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
                         allowfullscreen="true" webkitallowfullscreen="true"
-                        mozallowfullscreen="true"></iframe>
+                        mozallowfullscreen="true"></iframe>-->
+                <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                  <source [src]="sanitizedBlobUrl" type="application/x-mpegURL">
+                </video>
+
               </div>
               <div class="player-controls">
                 <div class="pc-item pc-resize">
@@ -100,8 +105,7 @@
                   <div class="tac tick-item tick-quality">HD</div>
                   <div class="tac tick-item tick-dub">SUB</div>
                   <div class="tac tick-item tick-dub">
-
-                    echo "VIEWS: " . $counter;
+                    VIEWS: 23
 
 
                   </div>

@@ -24,6 +24,7 @@ export class WatchMovieComponent implements OnInit {
   episode:Episode | undefined;
   ourmovie?:OurMovie;
   movie?:Movie;
+  movies:OurMovie[] | undefined
   streaming!:Streaming;
   anime: Anime | undefined;
   animeId!:string ;
@@ -43,9 +44,19 @@ export class WatchMovieComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params:Params)=>{
         this.episodeId=params['id'];
-        this.commentPayload.episodeId = this.episodeId;
+        console.log(params['id']);
+        this.commentPayload.episodeId = params['id'];
       }
     );
+   /* this.movieService.getOurMovies().subscribe(data=>{
+      this.movies=data;
+      this.ourmovie= this.movies?.find((movie) => movie.title==this.episodeId);
+      // this.movie= this.movies[1];
+      let url = this.ourmovie?.url;
+      if(url!=undefined){this.sanitizedBlobUrl =
+        this.sanitizer.bypassSecurityTrustResourceUrl(url);}
+    });*/
+
     this.movieService.getMovie(this.episodeId).subscribe(data=>{
       this.movie=data;
       console.log(this.movie);
@@ -58,20 +69,7 @@ export class WatchMovieComponent implements OnInit {
       });
 
     });
-    //this.getMovie(this.episodeId);
-    this.ourMovie();
   }
 
-  ourMovie(){
-    this.movieService.getOurMovies().subscribe(data=>{
-      this.ourmovie=data[1];
-    });
-
-   // this.movie= this.movies[1];
-    let url = this.ourmovie?.url;
-    if(url!=undefined){this.sanitizedBlobUrl =
-      this.sanitizer.bypassSecurityTrustResourceUrl(url);}
-
-  }
 
 }

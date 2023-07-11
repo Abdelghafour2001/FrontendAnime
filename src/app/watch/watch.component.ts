@@ -88,7 +88,7 @@ ourMovie(){
   this.movieService.getOurMovies().subscribe(data=>{
     this.movies=data;
   });
-this.movie= this.movies?.find((movie) => movie.title==this.episodeId);
+  this.movie= this.movies?.find((movie) => movie.title==this.episodeId);
 }
 
   postComment() {

@@ -56,6 +56,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { OurMoviesComponent } from './our-movies/our-movies.component';
 import { HistoryComponent } from './history/history.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { WatchOurComponent } from './watch-our/watch-our.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     CreateEpisodeComponent,
     OurMoviesComponent,
     HistoryComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    WatchOurComponent
 
   ],
     imports: [

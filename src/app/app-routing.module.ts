@@ -25,6 +25,7 @@ import {CreateEpisodeComponent} from "./create-episode/create-episode.component"
 import {HistoryComponent} from "./history/history.component";
 import {SearchResultsComponent} from "./search-results/search-results.component";
 import {AdminComponent} from "./admin/admin.component";
+import {WatchOurComponent} from "./watch-our/watch-our.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -32,6 +33,8 @@ const routes: Routes = [
   { path:"register", component:SignupComponent},
   { path:"movies", component:MoviesComponent} ,
   {path:"movie/:id", component:WatchMovieComponent} ,
+  {path:"tv/:id", component:WatchMovieComponent} ,
+
   {path:"tv",component:TvShowsComponent},
   {path:"anime",component:AnimeListComponent},
   { path:"login", component:LoginComponent},
@@ -49,7 +52,7 @@ const routes: Routes = [
   { path: 'genre/:genre', component: AnimeListComponent },
   { path: 'create-subreddit', component: CreateSubredditComponent },
   { path: 'our-movies', component: OurMoviesComponent },
-  { path: 'our-movies/:id', component: WatchMovieComponent },
+  { path: 'our-movies/:id', component: WatchOurComponent },
   { path: 'create-movie', component: CreateEpisodeComponent },
   { path:"user/viewHistory", component:HistoryComponent},
   //{ path:"emailconfirmation", component:UserConfirmationComponent},
