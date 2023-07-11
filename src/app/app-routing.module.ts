@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ForgotpasswordComponent} from "./forgotpassword/forgotpassword.component";
 import {HomeComponent} from "./home/home.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginComponent} from "./login/login.component";
@@ -26,6 +25,7 @@ import {HistoryComponent} from "./history/history.component";
 import {SearchResultsComponent} from "./search-results/search-results.component";
 import {AdminComponent} from "./admin/admin.component";
 import {WatchOurComponent} from "./watch-our/watch-our.component";
+import {ChangepasswordComponent} from "./changepassword/changepassword.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -56,8 +56,7 @@ const routes: Routes = [
   { path: 'create-movie', component: CreateEpisodeComponent },
   { path:"user/viewHistory", component:HistoryComponent},
   //{ path:"emailconfirmation", component:UserConfirmationComponent},
-  { path:"forgotpassword", component:ForgotpasswordComponent},
-  //{ path:"resetpassword", component:ResetpasswordComponent},
+  { path:"user/changepass", component:ChangepasswordComponent},
   { path:"**", component:NotfoundComponent} ,
 
 

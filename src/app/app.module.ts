@@ -57,6 +57,8 @@ import { OurMoviesComponent } from './our-movies/our-movies.component';
 import { HistoryComponent } from './history/history.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { WatchOurComponent } from './watch-our/watch-our.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -102,11 +104,12 @@ import { WatchOurComponent } from './watch-our/watch-our.component';
     OurMoviesComponent,
     HistoryComponent,
     SearchResultsComponent,
-    WatchOurComponent
+    WatchOurComponent,
+    ChangepasswordComponent
 
   ],
     imports: [
-      MatPaginatorModule,
+        MatPaginatorModule,
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
@@ -116,7 +119,7 @@ import { WatchOurComponent } from './watch-our/watch-our.component';
         NgxWebstorageModule.forRoot(),
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
-        NgbModule, EditorModule,
+        NgbModule, EditorModule, MatTableModule,
     ],
   providers: [AnimeServiceService,MovieServiceService,AuthService,{
     provide: HTTP_INTERCEPTORS,

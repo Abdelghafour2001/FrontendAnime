@@ -1,7 +1,88 @@
 <div class="admin-section">
   <h1>Admin Section</h1>
+  <h3>Users</h3>
+  <table mat-table [dataSource]="users" class="user-table">
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef> User ID </th>
+      <td mat-cell *matCellDef="let user"> {{ user.userId }} </td>
+    </ng-container>
 
-  <button (click)="deletePost(123)" class="delete-button">Delete Post</button>
-  <button (click)="deleteUser(456)" class="delete-button">Delete User</button>
-  <button (click)="deleteComment(789)" class="delete-button">Delete Comment</button>
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username </th>
+      <td mat-cell *matCellDef="let user"> {{ user.username }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="created">
+      <th mat-header-cell *matHeaderCellDef> Created </th>
+      <td mat-cell *matCellDef="let user"> {{ toDateTime(user.created) }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let user; columns: tableColumns;"></tr>
+  </table>
+  <h3>Comments</h3>
+
+  <table mat-table [dataSource]="comments" class="comment-table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let comment"> {{ comment.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="text">
+      <th mat-header-cell *matHeaderCellDef> Text </th>
+      <td mat-cell *matCellDef="let comment"> {{ comment.text }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef> Created Date </th>
+      <td mat-cell *matCellDef="let comment"> {{ comment.createdDate }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef> User </th>
+      <td mat-cell *matCellDef="let comment"> {{ comment.userName }} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns2"></tr>
+    <tr mat-row *matRowDef="let comment; columns: tableColumns2;"></tr>
+  </table>
+  <h3>Posts</h3>
+  <table mat-table [dataSource]="posts" class="post-table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let post"> {{ post.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="postName">
+      <th mat-header-cell *matHeaderCellDef> Post Name </th>
+      <td mat-cell *matCellDef="let post"> {{ post.postName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef> User Name </th>
+      <td mat-cell *matCellDef="let post"> {{ post.userName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let post"> {{ post.description }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns3"></tr>
+    <tr mat-row *matRowDef="let post; columns: tableColumns3;"></tr>
+  </table>
+
+  <input type="text" [(ngModel)]="inputData1" placeholder="Enter Post Title..."/>
+  <button (click)="deletePost(inputData1)" class="delete-button">Delete Post</button>
+  <input type="text" [(ngModel)]="inputData2" placeholder="Enter Username here...">
+  <button (click)="deleteUser(inputData2)" class="delete-button">Delete User</button>
+  <input type="text" [(ngModel)]="inputData3" placeholder="Enter Comment id here...">
+  <button (click)="deleteComment(inputData3)" class="delete-button">Delete Comment</button>
 </div>

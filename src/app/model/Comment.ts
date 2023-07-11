@@ -7,5 +7,6 @@ export class Comment {
 
   createdDate?: Date;
   user?: User;
+  userName?:string;
   episode?: Episode;
 }
