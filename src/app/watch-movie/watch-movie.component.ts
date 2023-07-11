@@ -59,7 +59,7 @@ export class WatchMovieComponent implements OnInit {
 
     });
     //this.getMovie(this.episodeId);
-    //this.ourMovie();
+    this.ourMovie();
   }
 
   ourMovie(){

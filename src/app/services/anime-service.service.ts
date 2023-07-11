@@ -50,4 +50,8 @@ export class AnimeServiceService {
     let url = "/api/anime/watch-episode/"+id;
     return this.http.get<Episode>(url);
   }
+  searchAnime(query:string){
+    let url = "/api/anime/search?keyw="+query+"&page=1";
+    return this.http.get<Anime[]>(url);
+  }
 }

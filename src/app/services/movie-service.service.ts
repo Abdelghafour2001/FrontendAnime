@@ -52,4 +52,8 @@ export class MovieServiceService {
     return this.http.get<Movie>(url);
 
   }
+  searchMovie(query:string){
+    let url = "/api/movies/search/" + query;
+    return this.http.get<Movie[]>(url);
+  }
 }

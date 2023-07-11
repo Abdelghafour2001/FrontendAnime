@@ -10,7 +10,7 @@ export class AdminComponent {
   constructor(private http: HttpClient) {}
 
   deletePost(postId: number): void {
-    this.http.delete(`/admin/posts/${postId}`).subscribe(
+    this.http.delete(`/api/api/admin/posts/${postId}`).subscribe(
       () => {
         console.log('Post deleted successfully');
         // Perform any additional actions upon successful deletion
@@ -23,7 +23,7 @@ export class AdminComponent {
   }
 
   deleteUser(userId: number): void {
-    this.http.delete(`/admin/users/${userId}`).subscribe(
+    this.http.delete(`/api/api/admin/users/${userId}`).subscribe(
       () => {
         console.log('User deleted successfully');
         // Perform any additional actions upon successful deletion
@@ -36,7 +36,7 @@ export class AdminComponent {
   }
 
   deleteComment(commentId: number): void {
-    this.http.delete(`/admin/comments/${commentId}`).subscribe(
+    this.http.delete(`/api/api/admin/comments/${commentId}`).subscribe(
       () => {
         console.log('Comment deleted successfully');
         // Perform any additional actions upon successful deletion

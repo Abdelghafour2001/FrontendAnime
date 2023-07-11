@@ -17,6 +17,13 @@ export class HeaderComponent  implements OnInit {
   public open(modal: any): void {
     this.modalService.open(modal);
   }
+  searchData: string = '';
+
+  search() {
+    if (this.searchData.trim() !== '') {
+      this.router.navigate(['/search', this.searchData]);
+    }
+  }
 activ=true;
   toggle(){
     this.activ= !this.activ;

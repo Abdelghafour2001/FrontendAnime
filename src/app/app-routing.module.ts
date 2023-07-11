@@ -23,6 +23,8 @@ import {WatchMovieComponent} from "./watch-movie/watch-movie.component";
 import {OurMoviesComponent} from "./our-movies/our-movies.component";
 import {CreateEpisodeComponent} from "./create-episode/create-episode.component";
 import {HistoryComponent} from "./history/history.component";
+import {SearchResultsComponent} from "./search-results/search-results.component";
+import {AdminComponent} from "./admin/admin.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent},
@@ -37,6 +39,8 @@ const routes: Routes = [
   { path: 'me/:id', component: MeComponent },
   { path: 'user/watchlist', component: WatchlistComponent },
   { path: 'anime/:id', component: AnimeDetailsComponent },
+  { path: 'search/:query', component: SearchResultsComponent },
+  { path:"admin", component:AdminComponent},
   { path: 'watch/:id', component: WatchComponent },
   { path: 'blog', component: BlogHomeComponent },
   { path: 'view-post/:id', component: ViewPostComponent },
